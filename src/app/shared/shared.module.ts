@@ -14,9 +14,22 @@ import { AdminLoginComponent } from '../pages/admin-login/admin-login.component'
 import { UserRegisterComponent } from '../pages/user-register/user-register.component';
 import { SellerRegisterComponent } from '../pages/seller-register/seller-register.component';
 import { SortByComponent } from './components/sort-by/sort-by.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { TooltipModule } from 'primeng/tooltip';
+import { MenubarModule } from 'primeng/menubar';
+import { TopstacksComponent } from './components/topstacks/topstacks.component';
+import { CurrentBestsellersComponent } from './components/current-bestsellers/current-bestsellers.component';
+import { TopRatesBookComponent } from './components/top-rates-book/top-rates-book.component';
+import { CarouselModule } from 'primeng/carousel';
+import { RatingModule } from 'primeng/rating';
+
 @NgModule({
 
-    declarations: [
+  declarations: [
     BreadcrumbsComponent,
     CommingsoonComponent,
     FooterComponent,
@@ -30,11 +43,35 @@ import { SortByComponent } from './components/sort-by/sort-by.component';
     AdminLoginComponent,
     UserRegisterComponent,
     SellerRegisterComponent,
-    SortByComponent
+    SortByComponent,
+    TopstacksComponent,
+    CurrentBestsellersComponent,
+    TopRatesBookComponent,
+
   ],
-    imports: [CommonModule],
-    exports: [CommonModule],
-    providers: []
+  imports: [
+    CommonModule,
+    InputTextModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    MenuModule,
+    SplitButtonModule,
+    TooltipModule,
+    MenubarModule,
+    CarouselModule,
+    RatingModule
+
+  ],
+  exports: [
+    CommonModule,
+    TopheaderComponent,
+    FooterComponent,
+    TopstacksComponent,
+    CurrentBestsellersComponent,
+    TopRatesBookComponent,
+  ],
+  providers: []
 
 })
 export class SharedModule { }

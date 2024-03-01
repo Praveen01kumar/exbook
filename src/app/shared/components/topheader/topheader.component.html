@@ -1,1 +1,39 @@
-<p>topheader works!</p>
+<div class="top-header">
+    <nav>
+        <div class="logo"><img src="assets/icons/1.png" alt="logo" (click)="gotoRoute('')"><span
+                (click)="gotoRoute('')">Exbook</span></div>
+        <div class="header">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Search for Books, Author and More..." />
+            </span>
+        </div>
+        <div class="action">
+            <div class="action-btn">
+                <div>
+                    <p-menu #userMenu [model]="userMenuitems" [popup]="true"></p-menu>
+                    <p-button [text]="true" [rounded]="true" (onClick)="userMenu.toggle($event)" pTooltip="User"
+                        tooltipPosition="left" icon="pi pi-user" class="user-button" severity="secondary"></p-button>
+                </div>
+                <div>
+                    <p-button [text]="true" [rounded]="true" pTooltip="Cart" tooltipPosition="left"
+                        icon="pi pi-shopping-cart" class="cart-button" severity="secondary">
+                        <span class="cart-count">0</span>
+                    </p-button>
+                </div>
+                <div>
+                    <p-button [text]="true" [rounded]="true" pTooltip="Notifications" tooltipPosition="left"
+                        icon="pi pi-bell" class="notification-button" severity="secondary">
+                        <span class="notif-count">9+</span>
+                    </p-button>
+                </div>
+                <div>
+                    <p-menu #settingMenu [model]="settingMenuitems" [popup]="true"></p-menu>
+                    <p-button [text]="true" [rounded]="true" (onClick)="settingMenu.toggle($event)" pTooltip="Menu"
+                        tooltipPosition="left" icon="pi pi-ellipsis-v" class="setting-button"
+                        severity="secondary"></p-button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

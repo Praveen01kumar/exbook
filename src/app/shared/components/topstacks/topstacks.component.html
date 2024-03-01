@@ -1,0 +1,11 @@
+<div class="top-stack">
+    <div class="item" *ngFor="let stack of stacksArr;">
+        <div class="name">
+            <h2 class="title">{{stack?.name}}</h2>
+            <span class="des">{{stack?.des}}</span>
+        </div>
+        <div class="icon">
+            <img [src]="stack?.icon" [alt]="stack?.icon">
+        </div>
+    </div>
+</div>

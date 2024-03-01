@@ -1,0 +1,20 @@
+<div class="current-bestsellers">
+    <div class="card">
+        <p-carousel [value]="products" [circular]="true" [scrollLeft]="true" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+            <ng-template let-product pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <div class="product-image">
+                            <img [src]="product?.image" [alt]="product?.name" class="img" />
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{ product?.name }}</h4>
+                            <h6 class="mt-0 mb-3">{{ '$' + product?.price }}</h6>
+                            <p-rating [ngModel]="product?.rating" [disabled]="true" [cancel]="false"></p-rating>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

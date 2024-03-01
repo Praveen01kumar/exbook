@@ -1,0 +1,200 @@
+.top-header {
+    position: fixed;
+    top: 0px;
+    background-color: #f6f6f6;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 6px 13px #00000017;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 8px 1% 4px 1%;
+        border-bottom: 1px solid #00000017;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 33%;
+
+            img {
+                width: 48px;
+                height: 28px;
+                margin-right: 6px;
+                cursor: pointer;
+            }
+
+            span {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 35px;
+                cursor: pointer;
+            }
+        }
+
+        .header {
+            width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .p-input-icon-left {
+                width: 100%;
+
+                .p-inputtext {
+                    width: 100%;
+                }
+            }
+        }
+
+        .action {
+            width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .action-btn {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .cart-button {
+                    position: relative;
+
+                    .cart-count {
+                        @extend .notification-count;
+                    }
+                }
+
+                .notification-button {
+                    position: relative;
+
+                    .notif-count {
+                        @extend .notification-count;
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+:host::ng-deep {
+    .action-btn {
+        .user-button {
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+
+            .p-button {
+                width: 3rem;
+                height: 3rem;
+
+                .pi {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .cart-button {
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+
+            .p-button {
+                width: 3rem;
+                height: 3rem;
+
+                .pi {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .notification-button {
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+
+            .p-button {
+                width: 3rem;
+                height: 3rem;
+
+                .pi {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .setting-button {
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+
+            .p-button {
+                width: 3rem;
+                height: 3rem;
+
+                .pi {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+.notification-count {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    background: #ff8d00;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (min-width:0px) and (max-width:667px) {
+    .top-header {
+        nav {
+            .logo {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px
+            }
+
+            .header {
+                width: 100%;
+                margin-top: 10px;
+
+                .p-input-icon-left {
+                    width: 90%;
+                }
+            }
+
+            .action {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+
+                .action-btn {
+                    flex-wrap: nowrap;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,72 @@
+:host::ng-deep {
+    .current-bestsellers {
+        .card {
+            .p-carousel-content {
+
+                .p-carousel-items-container {
+                    .p-carousel-item {
+                        margin: 0px 8px;
+                        background: #fff;
+                        transition: all ease 0.3s;
+                        padding: 20px;
+
+                        &:hover {
+                            box-shadow: 0 0 18px #0000001f;
+                            cursor: pointer;
+                        }
+
+                        .product-item {
+                            .product-item-content {
+
+                                .product-image {
+                                    width: 100%;
+                                    height: 250px;
+
+                                    .img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: fill;
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+                .p-carousel-prev{
+                    color: #1b8bcc;
+                    box-shadow: 0 0 18px #00000029;
+                }
+                .p-carousel-next{
+                    color: #1b8bcc;
+                    box-shadow: 0 0 18px #00000029;
+                }
+
+                .p-reset {
+                    background-color: transparent;
+
+                    .p-carousel-indicator {
+                        button {
+                            background-color: #1b8bcc80;
+                            width: 12px;
+                            height: 8px;
+                            border-radius: 4px;
+                        }
+                    }
+
+                    .p-carousel-indicator.p-highlight {
+                        button {
+                            background-color: #1b8bcc;
+                            width: 24px;
+                            height: 8px;
+                            border-radius: 8px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}

@@ -1,1 +1,34 @@
-<p>home works!</p>
+<app-topheader></app-topheader>
+<div class="home-container">
+    <div class="card">
+        <p-galleria [value]="images" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true"
+            [showIndicatorsOnItem]="true" [responsiveOptions]="responsiveOptions" [showItemNavigatorsOnHover]="true"
+            [circular]="true" [autoPlay]="true" [transitionInterval]="3000">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.itemImageSrc" style="width: 100%;" />
+            </ng-template>
+            <ng-template pTemplate="caption" let-item>
+                <div class="first-slide" *ngIf="(item.index==1)||(item.index==3)">
+                    <h1 class="heading">BACK TO SCHOOL</h1>
+                    <h1 class="offer">SPECIAL <span>50% OFF</span></h1>
+                    <h1 class="community"> FOR OUR STUDENT COMMUNITY </h1>
+                    <h1 class="deal-btn"><a class="slider-button" href="#">GET THE DEAL</a></h1>
+                </div>
+                <div class="second-slide" *ngIf="(item.index==2)||(item.index==4)">
+                    <h1 class="heading">Benefits of Reading</h1>
+                    <h1 class="slogan">Getting Smart, <br>Thin, Healthy, happy</h1>
+                    <h1 class="description"> Lorem ipsum dolor sit amet, <br> consectetuer adipiscing elit, sed </h1>
+                    <h1 class="collection-btn"><a class="slider-button" href="#">VIEW COLLECTION</a></h1>
+                </div>
+            </ng-template>
+        </p-galleria>
+    </div>
+</div>
+<topstacks></topstacks>
+<div class="bestsellers">
+    <current-bestsellers></current-bestsellers>
+</div>
+<div class="rates-book">
+    <top-rates-book></top-rates-book>
+</div>
+<app-footer></app-footer>
