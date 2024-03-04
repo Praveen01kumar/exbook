@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'top-rates-book',
-  templateUrl: './top-rates-book.component.html',
-  styleUrls: ['./top-rates-book.component.scss']
+  selector: 'related-products',
+  templateUrl: './related-products.component.html',
+  styleUrls: ['./related-products.component.scss']
 })
-export class TopRatesBookComponent implements OnInit {
+export class RelatedProductsComponent implements OnInit {
   products!: any[];
 
   responsiveOptions: any[] | undefined;
   constructor(private route:Router){}
-
   ngOnInit(): void {
 
     this.responsiveOptions = [
@@ -189,9 +188,10 @@ export class TopRatesBookComponent implements OnInit {
   }
 
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
- GotoDetail(url:string){
+
+  GotoDetail(url:string){
     const newurl = url.replace(/\s+/g, '-');
     this.route.navigate(['books/'+newurl]);
   }
-  
+
 }

@@ -171,9 +171,37 @@
 
 .bestsellers {
     margin: 12px 0px;
+
+    h1 {
+        margin: 20px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #2b2b2b;
+    }
+
 }
 
 .rates-book {
-    padding: 8px 16px;
     margin: 12px 0px;
+    h1 {
+        margin: 20px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #2b2b2b;
+    }
+}
+
+.limited-time{
+    margin: 12px 0px;
+    h1 {
+        margin: 40px 20px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #2b2b2b;
+        text-align: center;
+    }
+}
+
+.stacks{
+    margin: 12px 20px;
 }

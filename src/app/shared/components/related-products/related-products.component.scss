@@ -1,6 +1,8 @@
 :host::ng-deep {
-    .current-bestsellers {
+    .related-products {
         .card {
+            background-color: #ededed;
+            padding-top: 10px;
             .p-carousel-content {
                 .p-carousel-items-container {
                     .p-carousel-item {
@@ -8,11 +10,11 @@
                         background: #fff;
                         transition: all ease 0.3s;
                         padding: 20px;
-                        
+
                         &:hover {
                             box-shadow: 0 0 18px #0000001f;
                             cursor: pointer;
-                            
+
                             .product-item {
                                 .product-item-content {
                                     .product-detail {
@@ -197,19 +199,15 @@
                         .p-carousel-prev {
                             position: absolute;
                             background: #fff;
-                            left: 0px;
+                            left: -6px;
                             z-index: 11;
                         }
 
                         .p-carousel-next {
                             position: absolute;
                             background: #fff;
-                            right: 0px;
+                            right: -6px;
                             z-index: 11;
-                        }
-
-                        .p-carousel-items-content {
-                            margin: 0px 10px;
                         }
                     }
                 }
@@ -222,10 +220,6 @@
 
                         .p-carousel-next {
                             display: none;
-                        }
-
-                        .p-carousel-items-content {
-                            margin: 0px 10px;
                         }
                     }
                 }

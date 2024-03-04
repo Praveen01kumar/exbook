@@ -1,5 +1,5 @@
 :host::ng-deep {
-    .current-bestsellers {
+    .limited-time-offer {
         .card {
             .p-carousel-content {
                 .p-carousel-items-container {
@@ -8,11 +8,11 @@
                         background: #fff;
                         transition: all ease 0.3s;
                         padding: 20px;
-                        
+
                         &:hover {
                             box-shadow: 0 0 18px #0000001f;
                             cursor: pointer;
-                            
+
                             .product-item {
                                 .product-item-content {
                                     .product-detail {

@@ -1,0 +1,13 @@
+<div class="stack-f">
+    <div class="stack-item" *ngFor="let item of stackData;">
+        <div class="icon">
+            <img [src]="item?.icon" [alt]="item?.title">
+        </div>
+        <div class="count">
+            <h1>{{item?.count}}</h1>
+        </div>
+        <div class="title">
+            <h3>{{item?.title}}</h3>
+        </div>
+    </div>
+</div>

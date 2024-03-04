@@ -1,0 +1,124 @@
+.footer-content {
+    background: #1b8bcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+
+    .footer-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 2%;
+
+        .footer-block {
+            width: 25%;
+            padding: 0px 10px;
+
+            .footer-logo {
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    text-decoration: none;
+
+                    img {
+                        width: 50px;
+                        height: 34px;
+                    }
+
+                    .name {
+                        color: #fff;
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            .ft-text {
+                p {
+                    color: #fff;
+                    font-size: 14px;
+                    margin: 8px 0px;
+                }
+            }
+
+            h4 {
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 8px;
+                    font-size: 20px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0px;
+
+                li {
+                    span {
+                        color: #fff;
+                        line-height: 1.8;
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        width: fit-content;
+
+                        i {
+                            margin: 0px 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        background: #177db8;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+
+        .footer-copyright {
+            font-size: 12px;
+            color: #fff;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (min-width:400px) and (max-width:900px) {
+    .footer-content {
+        .footer-container {
+            flex-wrap: wrap;
+
+            .footer-block {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width:0px) and (max-width:400px) {
+    .footer-content {
+        .footer-container {
+            flex-wrap: wrap;
+
+            .footer-block {
+                width: 100%;
+            }
+        }
+    }
+
+}

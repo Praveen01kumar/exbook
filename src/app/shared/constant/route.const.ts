@@ -4,6 +4,7 @@ export const pageRoute = {
     admin_login: 'admin-login',
     user_register: 'user-register',
     seller_register: 'seller-register',
+    books: 'books/:id',
     categories: 'categories',
     veiled: '**',
 }

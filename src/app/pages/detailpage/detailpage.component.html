@@ -1,0 +1,142 @@
+<app-topheader></app-topheader>
+<div class="detial-container">
+    <div class="image">
+        <p-galleria [value]="images" [thumbnailsPosition]="thumbnail" [showThumbnailNavigators]="false"
+            [numVisible]="5">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.itemImageSrc" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+                <div class="thumbnail-nogutter">
+                    <img [src]="item.thumbnailImageSrc" />
+                </div>
+            </ng-template>
+        </p-galleria>
+    </div>
+    <div class="detail">
+        <div class="prod-title">
+            <h1 class="page-heading">Ten Thousand Skies Above You</h1>
+        </div>
+        <div class="product-author">
+            <span class="author">Author:</span>
+            <span class="name">Christian Dior</span>
+        </div>
+        <div class="rating-links">
+            <span class="spr-badge">
+                <p-rating [ngModel]="3" [cancel]="false"></p-rating>
+                <span class="spr-badge-caption">No reviews</span>
+            </span>
+            <a href="#">Add Your Review</a>
+        </div>
+        <div class="group-price-sale">
+            <div class="detail-price">
+                <span class="detail">Buy Now:</span>
+                <span class="price">$15.00</span>
+            </div>
+            <div class="mrp">
+                M.R.P.: <span>₹139.00</span>
+            </div>
+            <div class="save">
+                <span class="lb">Save:</span>
+                <span class="value">₹20.00</span>
+                <span class="percent">(14%)</span>
+            </div>
+            <p class="includes">Inclusive of all taxes</p>
+            <div class="delivered">
+                <span class="free">FREE delivery</span>
+                <span class="day">Monday</span>
+                on orders dispatched by Exbook
+            </div>
+            <div class="In-stock">
+                <span>In-stock</span>
+            </div>
+            <div class="category">
+                <span>Category: </span><a href="#">All, Arts & Photography, Romance, Teen & Young Adult</a>
+            </div>
+            <div class="description">
+                <span>Description</span>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat
+            </div>
+            <div class="quantity-btns">
+                <button class="plus" (click)="quantity('-')"><i class="pi pi-minus"></i></button>
+                <p-inputNumber [(ngModel)]="Quntity" [min]="1" [max]="100"> </p-inputNumber>
+                <button class="minus" (click)="quantity('+')"><i class="pi pi-plus"></i></button>
+            </div>
+            <div class="buy-now">
+                <button class="cart">Add to cart</button>
+                <button class="buy">Buy it now</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="detial">
+    <table class="detail-table">
+        <tr>
+            <th>Book Title:</th>
+            <td>Ten Thousand Skies Above You</td>
+        </tr>
+        <tr>
+            <th>Author:</th>
+            <td>Christian Dior</td>
+        </tr>
+        <tr>
+            <th>Edition Language:</th>
+            <td>English</td>
+        </tr>
+        <tr>
+            <th>Book Format:</th>
+            <td>Paperpack, 320 pages</td>
+        </tr>
+        <tr>
+            <th>Dimension:</th>
+            <td>2.4cm X 24cm X 1.1cm</td>
+        </tr>
+        <tr>
+            <th>Country of Origin:</th>
+            <td>India</td>
+        </tr>
+        <tr>
+            <th>Date Published:</th>
+            <td>12 Feb 2023</td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail-description">
+    <p-tabView styleClass="tabview-custom">
+        <p-tabPanel header="description">
+            <ng-template pTemplate="header">
+                <span>Description</span>
+            </ng-template>
+            <p>Our new <strong>HPB12 / A12</strong> battery is rated at 2000mAh and designed to power up Black and Decker / FireStorm line of 12V tools allowing users to run multiple devices off the same battery pack. The HPB12 is compatible with the following Black and Decker power tool models </p>
+        </p-tabPanel>
+        <p-tabPanel header="specifications">
+            <ng-template pTemplate="header">
+                <span>Specifications</span>
+            </ng-template>
+            <p>The story takes place in Indiana, in and around the Limberlost Swamp - at that time, a site of heavy logging and natural oil extraction. This Bildungsroman is structured as girl-meets-boy, girl-loses-boy, girl-undertakes-an-adventure-to-win-boy-back. The novel's heroine, Elnora Comstock, is an impoverished young woman who lives with her widowed mother, Katharine Comstock, on the edge of the Limberlost. Elnora faces cold neglect by her mother, a woman who feels ruined by the death of her husband, Robert Comstock, who drowned in quicksand in the swamp. Katharine blames Elnora for his death, because her husband died while she gave birth to their daughter and could not come to his rescue.</p>
+        </p-tabPanel>
+        <p-tabPanel header="About Book">
+            <ng-template pTemplate="header">
+                <span style="white-space: nowrap;">About Book</span>
+            </ng-template>
+            <p>Our new is rated at 2000mAh and designed to power up Black and Decker / FireStorm line of 12V tools allowing users to run multiple devices off the same battery pack. The HPB12 is compatible with the following Black and Decker power tool models</p>
+        </p-tabPanel>
+        <p-tabPanel header="Reviews">
+            <ng-template pTemplate="header">
+                <span>Reviews</span>
+            </ng-template>
+            <p>No reviews yet</p>
+        </p-tabPanel>
+    </p-tabView>
+</div>
+
+<div class="Related_Products">
+    <h1>Related Products</h1>
+    <div class="Related">
+        <related-products></related-products>
+    </div>
+</div>
+
+<app-footer></app-footer>

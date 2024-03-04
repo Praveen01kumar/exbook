@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'current-bestsellers',
@@ -9,13 +10,19 @@ export class CurrentBestsellersComponent implements OnInit {
   products!: any[];
 
   responsiveOptions: any[] | undefined;
+  constructor(private route:Router){}
 
   ngOnInit(): void {
 
     this.responsiveOptions = [
       {
+        breakpoint: '7000px',
+        numVisible: 8,
+        numScroll: 1
+      },
+      {
         breakpoint: '3000px',
-        numVisible: 10,
+        numVisible: 8,
         numScroll: 1
       },
       {
@@ -60,7 +67,6 @@ export class CurrentBestsellersComponent implements OnInit {
       }
     ];
 
-
     this.products = [
       {
         image: 'assets/products/1.jpg',
@@ -69,10 +75,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'add',
         vendor: 'Dolce & Gabbana',
-        price: '210.00',
-        price_compare: '',
+        price: 210.00,
+        price_compare: 212.12,
         reviews: 'No reviews',
-        reviews_count: '',
+        reviews_count: 0,
         rating: 5
       },
       {
@@ -82,10 +88,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: true,
         btn_type: 'select',
         vendor: 'Armani',
-        price: '12.00',
-        price_compare: '15.00',
+        price: 12.40,
+        price_compare: 15.10,
         reviews: 'No reviews',
-        reviews_count: '',
+        reviews_count: 0,
         rating: 4
       },
       {
@@ -95,10 +101,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'select',
         vendor: 'Christian Dior',
-        price: '12.00',
-        price_compare: '',
+        price: 12,
+        price_compare: 13,
         reviews: 'review',
-        reviews_count: '1',
+        reviews_count: 1,
         rating: 2
       },
       {
@@ -108,10 +114,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'add',
         vendor: 'Christian Dior',
-        price: '12.00',
-        price_compare: '',
+        price: 112.00,
+        price_compare: 123,
         reviews: 'reviews',
-        reviews_count: '1000',
+        reviews_count: '1k',
         rating: 4
       },
       {
@@ -121,10 +127,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'add',
         vendor: 'Dolce & Gabbana',
-        price: '210.00',
-        price_compare: '',
+        price: 101,
+        price_compare: 102,
         reviews: 'No reviews',
-        reviews_count: '',
+        reviews_count: 0,
         rating: 5
       },
       {
@@ -134,10 +140,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: true,
         btn_type: 'select',
         vendor: 'Armani',
-        price: '12.00',
-        price_compare: '15.00',
+        price: 300,
+        price_compare: 463,
         reviews: 'reviews',
-        reviews_count: '20',
+        reviews_count: 20,
         rating: 4
       },
       {
@@ -147,10 +153,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'select',
         vendor: 'Christian Dior',
-        price: '12.00',
-        price_compare: '',
+        price: 12,
+        price_compare: 18,
         reviews: 'No reviews',
-        reviews_count: '',
+        reviews_count: 0,
         rating: 2
       },
       {
@@ -160,10 +166,10 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'add',
         vendor: 'Christian Dior',
-        price: '12.00',
-        price_compare: '',
+        price: 12.00,
+        price_compare: 12.01,
         reviews: 'reviews',
-        reviews_count: '2',
+        reviews_count: 2,
         rating: 4
       },
       {
@@ -173,12 +179,20 @@ export class CurrentBestsellersComponent implements OnInit {
         sale: false,
         btn_type: 'add',
         vendor: 'Christian Dior',
-        price: '12.00',
-        price_compare: '',
+        price: 12.00,
+        price_compare: 0,
         reviews: 'No reviews',
-        reviews_count: '',
+        reviews_count: 0,
         rating: 4
       }
     ]
   }
+
+  prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
+
+  GotoDetail(url:string){
+    const newurl = url.replace(/\s+/g, '-');
+    this.route.navigate(['books/'+newurl]);
+  }
+
 }

@@ -26,6 +26,13 @@ import { CurrentBestsellersComponent } from './components/current-bestsellers/cu
 import { TopRatesBookComponent } from './components/top-rates-book/top-rates-book.component';
 import { CarouselModule } from 'primeng/carousel';
 import { RatingModule } from 'primeng/rating';
+import { LimitedTimeOfferComponent } from './components/limited-time-offer/limited-time-offer.component';
+import { StacksComponent } from './components/stacks/stacks.component';
+import { DetailpageComponent } from '../pages/detailpage/detailpage.component';
+import { GalleriaModule } from 'primeng/galleria';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { TabViewModule } from 'primeng/tabview';
+import { RelatedProductsComponent } from './components/related-products/related-products.component';
 
 @NgModule({
 
@@ -47,6 +54,11 @@ import { RatingModule } from 'primeng/rating';
     TopstacksComponent,
     CurrentBestsellersComponent,
     TopRatesBookComponent,
+    LimitedTimeOfferComponent,
+    StacksComponent,
+    DetailpageComponent,
+    RelatedProductsComponent,
+    
 
   ],
   imports: [
@@ -60,7 +72,10 @@ import { RatingModule } from 'primeng/rating';
     TooltipModule,
     MenubarModule,
     CarouselModule,
-    RatingModule
+    RatingModule,
+    GalleriaModule,
+    InputNumberModule,
+    TabViewModule
 
   ],
   exports: [
@@ -70,6 +85,9 @@ import { RatingModule } from 'primeng/rating';
     TopstacksComponent,
     CurrentBestsellersComponent,
     TopRatesBookComponent,
+    LimitedTimeOfferComponent,
+    StacksComponent,
+    RelatedProductsComponent
   ],
   providers: []
 
