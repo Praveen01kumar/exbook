@@ -68,6 +68,19 @@ export class RelatedProductsComponent implements OnInit {
 
     this.products = [
       {
+        image: 'assets/products/9.jpg',
+        type: 'Modern',
+        name: 'Ten Thousand Skies Above You',
+        sale: false,
+        btn_type: 'add',
+        vendor: 'Christian Dior',
+        price: 12.00,
+        price_compare: 0,
+        reviews: 'No reviews',
+        reviews_count: 0,
+        rating: 4
+      },
+      {
         image: 'assets/products/10.jpg',
         type: 'Modern',
         name: 'Consectetur Videntur',
@@ -158,32 +171,32 @@ export class RelatedProductsComponent implements OnInit {
         reviews_count: 0,
         rating: 2
       },
-      {
-        image: 'assets/products/17.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 12.01,
-        reviews: 'reviews',
-        reviews_count: 2,
-        rating: 4
-      },
-      {
-        image: 'assets/products/18.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 0,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 4
-      }
+      // {
+      //   image: 'assets/products/17.jpg',
+      //   type: 'Modern',
+      //   name: 'Ten Thousand Skies Above You',
+      //   sale: false,
+      //   btn_type: 'add',
+      //   vendor: 'Christian Dior',
+      //   price: 12.00,
+      //   price_compare: 12.01,
+      //   reviews: 'reviews',
+      //   reviews_count: 2,
+      //   rating: 4
+      // },
+      // {
+      //   image: 'assets/products/18.jpg',
+      //   type: 'Modern',
+      //   name: 'Ten Thousand Skies Above You',
+      //   sale: false,
+      //   btn_type: 'add',
+      //   vendor: 'Christian Dior',
+      //   price: 12.00,
+      //   price_compare: 0,
+      //   reviews: 'No reviews',
+      //   reviews_count: 0,
+      //   rating: 4
+      // }
     ]
   }
 
@@ -191,7 +204,8 @@ export class RelatedProductsComponent implements OnInit {
 
   GotoDetail(url:string){
     const newurl = url.replace(/\s+/g, '-');
-    this.route.navigate(['books/'+newurl]);
+    const newurl1 = 'categories/collection';
+    this.route.navigate([newurl1]);
   }
 
 }

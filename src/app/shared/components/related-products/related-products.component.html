@@ -18,10 +18,6 @@
                                     product?.price_compare }}</span>
                                 <span>{{ '$' + product?.price }}</span>
                             </div>
-                            <div class="action">
-                                <span *ngIf="product?.btn_type==='add'">Add to cart</span>
-                                <span *ngIf="product?.btn_type==='select'">Select options</span>
-                            </div>
                             <span class="off">{{prctg(product?.price_compare, product?.price)}}% off</span>
                             <div class="reviews">
                                 <span class="title">{{product?.reviews}}
@@ -37,5 +33,25 @@
                 </div>
             </ng-template>
         </p-carousel>
+    </div>
+</div>
+
+<div class="related-products1">
+    <div class="product-item" (click)="GotoDetail(product?.name)" *ngFor="let product of products;">
+        <div class="product-image">
+            <span class="sale" *ngIf="product?.sale">sale</span>
+            <img [src]="product?.image" [alt]="product?.name" class="img" />
+        </div>
+        <div class="product-detail">
+            <h4 class="type">{{ product?.type }}</h4>
+            <h4 class="name">{{ product?.name }}</h4>
+            <h4 class="vendor">{{ product?.vendor }}</h4>
+            <div class="price">
+                <span class="price_compare" *ngIf="product?.price_compare!==0">{{ '$' +
+                    product?.price_compare }}</span>
+                <span>{{ '$' + product?.price }}</span>
+            </div>
+            <span class="off">{{prctg(product?.price_compare, product?.price)}}% off</span>
+        </div>
     </div>
 </div>

@@ -170,136 +170,32 @@ export class LimitedTimeOfferComponent implements OnInit {
       reviews_count: 2,
       rating: 4
     },
-    {
-      image: 'assets/products/9.jpg',
-      type: 'Modern',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Christian Dior',
-      price: 12.00,
-      price_compare: 0,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 4
-    },
-    {
-      image: 'assets/products/10.jpg',
-      type: 'Modern',
-      name: 'Consectetur Videntur',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Dolce & Gabbana',
-      price: 210.00,
-      price_compare: 212.12,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 5
-    },
-    {
-      image: 'assets/products/11.jpg',
-      type: 'Office',
-      name: 'The Trials Of Apollo',
-      sale: true,
-      btn_type: 'select',
-      vendor: 'Armani',
-      price: 12.40,
-      price_compare: 15.10,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 4
-    },
-    {
-      image: 'assets/products/12.jpg',
-      type: 'Party',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'select',
-      vendor: 'Christian Dior',
-      price: 12,
-      price_compare: 13,
-      reviews: 'review',
-      reviews_count: 1,
-      rating: 2
-    },
-    {
-      image: 'assets/products/13.jpg',
-      type: 'Modern',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Christian Dior',
-      price: 112.00,
-      price_compare: 123,
-      reviews: 'reviews',
-      reviews_count: '1k',
-      rating: 4
-    },
-    {
-      image: 'assets/products/14.jpg',
-      type: 'Modern',
-      name: 'Consectetur Videntur',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Dolce & Gabbana',
-      price: 101,
-      price_compare: 102,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 5
-    },
-    {
-      image: 'assets/products/15.jpg',
-      type: 'Office',
-      name: 'The Trials Of Apollo',
-      sale: true,
-      btn_type: 'select',
-      vendor: 'Armani',
-      price: 300,
-      price_compare: 463,
-      reviews: 'reviews',
-      reviews_count: 20,
-      rating: 4
-    },
-    {
-      image: 'assets/products/16.jpg',
-      type: 'Party',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'select',
-      vendor: 'Christian Dior',
-      price: 12,
-      price_compare: 18,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 2
-    },
-    {
-      image: 'assets/products/17.jpg',
-      type: 'Modern',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Christian Dior',
-      price: 12.00,
-      price_compare: 12.01,
-      reviews: 'reviews',
-      reviews_count: 2,
-      rating: 4
-    },
-    {
-      image: 'assets/products/18.jpg',
-      type: 'Modern',
-      name: 'Ten Thousand Skies Above You',
-      sale: false,
-      btn_type: 'add',
-      vendor: 'Christian Dior',
-      price: 12.00,
-      price_compare: 0,
-      reviews: 'No reviews',
-      reviews_count: 0,
-      rating: 4
-    }
+    // {
+    //   image: 'assets/products/9.jpg',
+    //   type: 'Modern',
+    //   name: 'Ten Thousand Skies Above You',
+    //   sale: false,
+    //   btn_type: 'add',
+    //   vendor: 'Christian Dior',
+    //   price: 12.00,
+    //   price_compare: 0,
+    //   reviews: 'No reviews',
+    //   reviews_count: 0,
+    //   rating: 4
+    // },
+    // {
+    //   image: 'assets/products/10.jpg',
+    //   type: 'Modern',
+    //   name: 'Consectetur Videntur',
+    //   sale: false,
+    //   btn_type: 'add',
+    //   vendor: 'Dolce & Gabbana',
+    //   price: 210.00,
+    //   price_compare: 212.12,
+    //   reviews: 'No reviews',
+    //   reviews_count: 0,
+    //   rating: 5
+    // }
     ]
   }
 
@@ -307,7 +203,8 @@ export class LimitedTimeOfferComponent implements OnInit {
 
   GotoDetail(url:string){
     const newurl = url.replace(/\s+/g, '-');
-    this.route.navigate(['books/'+newurl]);
+    const newurl1 = 'categories/collection';
+    this.route.navigate([newurl1]);
   }
 
 }

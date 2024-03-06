@@ -10,7 +10,7 @@ export class CurrentBestsellersComponent implements OnInit {
   products!: any[];
 
   responsiveOptions: any[] | undefined;
-  constructor(private route:Router){}
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
 
@@ -172,27 +172,40 @@ export class CurrentBestsellersComponent implements OnInit {
         reviews_count: 2,
         rating: 4
       },
-      {
-        image: 'assets/products/9.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 0,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 4
-      }
+      // {
+      //   image: 'assets/products/9.jpg',
+      //   type: 'Modern',
+      //   name: 'Ten Thousand Skies Above You',
+      //   sale: false,
+      //   btn_type: 'add',
+      //   vendor: 'Christian Dior',
+      //   price: 12.00,
+      //   price_compare: 0,
+      //   reviews: 'No reviews',
+      //   reviews_count: 0,
+      //   rating: 4
+      // }, {
+      //   image: 'assets/products/10.jpg',
+      //   type: 'Modern',
+      //   name: 'Consectetur Videntur',
+      //   sale: false,
+      //   btn_type: 'add',
+      //   vendor: 'Dolce & Gabbana',
+      //   price: 210.00,
+      //   price_compare: 212.12,
+      //   reviews: 'No reviews',
+      //   reviews_count: 0,
+      //   rating: 5
+      // },
     ]
   }
 
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
 
-  GotoDetail(url:string){
+  GotoDetail(url: string) {
     const newurl = url.replace(/\s+/g, '-');
-    this.route.navigate(['books/'+newurl]);
+    const newurl1 = 'categories/collection';
+    this.route.navigate([newurl1]);
   }
 
 }

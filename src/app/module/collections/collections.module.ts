@@ -11,6 +11,9 @@ import { LiteratureFictionComponent } from './literature-fiction/literature-fict
 import { MysterySuspenseComponent } from './mystery-suspense/mystery-suspense.component';
 import { SciFiFantasyComponent } from './sci-fi-fantasy/sci-fi-fantasy.component';
 import { CollectionComponent } from './collection/collection.component';
+import { CurrentBestsellersComponent } from './current-bestsellers/current-bestsellers.component';
+import { LimitedTimeOfferComponent } from './limited-time-offer/limited-time-offer.component';
+import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CollectionComponent } from './collection/collection.component';
     LiteratureFictionComponent,
     MysterySuspenseComponent,
     SciFiFantasyComponent,
-    CollectionComponent
+    CollectionComponent,
+    CurrentBestsellersComponent,
+    LimitedTimeOfferComponent,
+    TopRatesBookComponent
   ],
   imports: [
     CommonModule,

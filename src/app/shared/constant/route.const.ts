@@ -11,7 +11,7 @@ export const pageRoute = {
 
 export const collRoute = {
     empty: '',
-    all_collections: 'all-collections',
+    all_collections: 'all',
     arts_photography: 'arts-photography',
     biographies_memoirs: 'biographies-memoirs',
     childrens_books: 'childrens-books',
@@ -19,5 +19,8 @@ export const collRoute = {
     literature_fiction: 'literature-fiction',
     mystery_suspense: 'mystery-suspense',
     sci_fi_fantasy: 'sci-fi-fantasy',
-    collections:'collections'
+    collection: 'collection',
+    current_bestsellers: 'current-bestsellers',
+    limited_time_offer: 'limited-time-offer',
+    top_rates_book: 'top-rates-book',
 }
