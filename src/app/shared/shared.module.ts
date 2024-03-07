@@ -22,17 +22,22 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { TooltipModule } from 'primeng/tooltip';
 import { MenubarModule } from 'primeng/menubar';
 import { TopstacksComponent } from './components/topstacks/topstacks.component';
-import { CurrentBestsellersComponent } from './components/current-bestsellers/current-bestsellers.component';
-import { TopRatesBookComponent } from './components/top-rates-book/top-rates-book.component';
+import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { CarouselModule } from 'primeng/carousel';
 import { RatingModule } from 'primeng/rating';
-import { LimitedTimeOfferComponent } from './components/limited-time-offer/limited-time-offer.component';
+import { LimitedOfferComponent } from './components/limited-offer/limited-offer.component';
 import { StacksComponent } from './components/stacks/stacks.component';
 import { DetailpageComponent } from '../pages/detailpage/detailpage.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TabViewModule } from 'primeng/tabview';
 import { RelatedProductsComponent } from './components/related-products/related-products.component';
+import { AccordionModule } from 'primeng/accordion';
+import { ListboxModule } from 'primeng/listbox';
+import { SliderModule } from 'primeng/slider';
+import { ChipModule } from 'primeng/chip';
+
 
 @NgModule({
 
@@ -52,9 +57,9 @@ import { RelatedProductsComponent } from './components/related-products/related-
     SellerRegisterComponent,
     SortByComponent,
     TopstacksComponent,
-    CurrentBestsellersComponent,
-    TopRatesBookComponent,
-    LimitedTimeOfferComponent,
+    BestsellersComponent,
+    TopRatedComponent,
+    LimitedOfferComponent,
     StacksComponent,
     DetailpageComponent,
     RelatedProductsComponent,
@@ -75,7 +80,11 @@ import { RelatedProductsComponent } from './components/related-products/related-
     RatingModule,
     GalleriaModule,
     InputNumberModule,
-    TabViewModule
+    TabViewModule,
+    AccordionModule,
+    ListboxModule,
+    SliderModule,
+    ChipModule
 
   ],
   exports: [
@@ -83,11 +92,12 @@ import { RelatedProductsComponent } from './components/related-products/related-
     TopheaderComponent,
     FooterComponent,
     TopstacksComponent,
-    CurrentBestsellersComponent,
-    TopRatesBookComponent,
-    LimitedTimeOfferComponent,
+    BestsellersComponent,
+    TopRatedComponent,
+    LimitedOfferComponent,
     StacksComponent,
-    RelatedProductsComponent
+    RelatedProductsComponent,
+    FiltersidebarComponent
   ],
   providers: []
 

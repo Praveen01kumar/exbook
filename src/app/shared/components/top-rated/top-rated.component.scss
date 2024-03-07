@@ -1,7 +1,6 @@
 :host::ng-deep {
-    .limited-time-offer {
+    .top-rated {
         display: block;
-
         .card {
             .p-carousel-content {
                 .p-carousel-items-container {
@@ -197,7 +196,7 @@
         }
     }
 
-    .limited-time-offer1 {
+    .top-rated1 {
         display: none;
         flex-wrap: wrap;
         justify-content: center;
@@ -319,11 +318,11 @@
 }
 
 @media (min-width:0px) and (max-width:991px) {
-    .limited-time-offer {
+    .top-rated {
         display: none;
     }
 
-    .limited-time-offer1 {
+    .top-rated1 {
         display: flex;
     }
 }

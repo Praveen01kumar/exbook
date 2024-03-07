@@ -1,4 +1,4 @@
-<div class="current-bestsellers">
+<div class="limited-offer">
     <div class="card">
         <p-carousel [value]="products" [circular]="true" [scrollLeft]="true" [numScroll]="1"
             [responsiveOptions]="responsiveOptions">
@@ -35,8 +35,7 @@
         </p-carousel>
     </div>
 </div>
-
-<div class="current-bestsellers1">
+<div class="limited-offer1">
     <div class="product-item" (click)="GotoDetail(product?.name)" *ngFor="let product of products;">
         <div class="product-image">
             <span class="sale" *ngIf="product?.sale">sale</span>

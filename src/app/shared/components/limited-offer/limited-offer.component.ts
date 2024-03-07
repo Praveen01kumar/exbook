@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'limited-time-offer',
-  templateUrl: './limited-time-offer.component.html',
-  styleUrls: ['./limited-time-offer.component.scss']
+  selector: 'limited-offer',
+  templateUrl: './limited-offer.component.html',
+  styleUrls: ['./limited-offer.component.scss']
 })
-export class LimitedTimeOfferComponent implements OnInit {
+export class LimitedOfferComponent implements OnInit {
   products!: any[];
 
   responsiveOptions: any[] | undefined;

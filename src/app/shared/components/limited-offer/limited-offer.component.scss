@@ -1,6 +1,7 @@
 :host::ng-deep {
-    .current-bestsellers {
+    .limited-offer {
         display: block;
+
         .card {
             .p-carousel-content {
                 .p-carousel-items-container {
@@ -9,7 +10,7 @@
                         background: #fff;
                         transition: all ease 0.3s;
                         padding: 20px;
-                        
+
                         &:hover {
                             box-shadow: 0 0 18px #0000001f;
                             cursor: pointer;
@@ -196,7 +197,7 @@
         }
     }
 
-    .current-bestsellers1 {
+    .limited-offer1 {
         display: none;
         flex-wrap: wrap;
         justify-content: center;
@@ -318,11 +319,11 @@
 }
 
 @media (min-width:0px) and (max-width:991px) {
-    .current-bestsellers {
+    .limited-offer {
         display: none;
     }
 
-    .current-bestsellers1 {
+    .limited-offer1 {
         display: flex;
     }
 }

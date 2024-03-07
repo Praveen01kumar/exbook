@@ -14,6 +14,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { CurrentBestsellersComponent } from './current-bestsellers/current-bestsellers.component';
 import { LimitedTimeOfferComponent } from './limited-time-offer/limited-time-offer.component';
 import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component
   ],
   imports: [
     CommonModule,
-    CollectionsRoutingModule
+    CollectionsRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: []

@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'top-rates-book',
-  templateUrl: './top-rates-book.component.html',
-  styleUrls: ['./top-rates-book.component.scss']
+  selector: 'bestsellers',
+  templateUrl: './bestsellers.component.html',
+  styleUrls: ['./bestsellers.component.scss']
 })
-export class TopRatesBookComponent implements OnInit {
+export class BestsellersComponent implements OnInit {
   products!: any[];
 
   responsiveOptions: any[] | undefined;
-  constructor(private route:Router){}
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
 
@@ -69,20 +69,7 @@ export class TopRatesBookComponent implements OnInit {
 
     this.products = [
       {
-        image: 'assets/products/9.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 0,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 4
-      },
-      {
-        image: 'assets/products/10.jpg',
+        image: 'assets/products/1.jpg',
         type: 'Modern',
         name: 'Consectetur Videntur',
         sale: false,
@@ -95,7 +82,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 5
       },
       {
-        image: 'assets/products/11.jpg',
+        image: 'assets/products/2.jpg',
         type: 'Office',
         name: 'The Trials Of Apollo',
         sale: true,
@@ -108,7 +95,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 4
       },
       {
-        image: 'assets/products/12.jpg',
+        image: 'assets/products/3.jpg',
         type: 'Party',
         name: 'Ten Thousand Skies Above You',
         sale: false,
@@ -121,7 +108,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 2
       },
       {
-        image: 'assets/products/13.jpg',
+        image: 'assets/products/4.jpg',
         type: 'Modern',
         name: 'Ten Thousand Skies Above You',
         sale: false,
@@ -134,7 +121,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 4
       },
       {
-        image: 'assets/products/14.jpg',
+        image: 'assets/products/5.jpg',
         type: 'Modern',
         name: 'Consectetur Videntur',
         sale: false,
@@ -147,7 +134,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 5
       },
       {
-        image: 'assets/products/15.jpg',
+        image: 'assets/products/6.jpg',
         type: 'Office',
         name: 'The Trials Of Apollo',
         sale: true,
@@ -160,7 +147,7 @@ export class TopRatesBookComponent implements OnInit {
         rating: 4
       },
       {
-        image: 'assets/products/16.jpg',
+        image: 'assets/products/7.jpg',
         type: 'Party',
         name: 'Ten Thousand Skies Above You',
         sale: false,
@@ -172,21 +159,21 @@ export class TopRatesBookComponent implements OnInit {
         reviews_count: 0,
         rating: 2
       },
+      {
+        image: 'assets/products/8.jpg',
+        type: 'Modern',
+        name: 'Ten Thousand Skies Above You',
+        sale: false,
+        btn_type: 'add',
+        vendor: 'Christian Dior',
+        price: 12.00,
+        price_compare: 12.01,
+        reviews: 'reviews',
+        reviews_count: 2,
+        rating: 4
+      },
       // {
-      //   image: 'assets/products/17.jpg',
-      //   type: 'Modern',
-      //   name: 'Ten Thousand Skies Above You',
-      //   sale: false,
-      //   btn_type: 'add',
-      //   vendor: 'Christian Dior',
-      //   price: 12.00,
-      //   price_compare: 12.01,
-      //   reviews: 'reviews',
-      //   reviews_count: 2,
-      //   rating: 4
-      // },
-      // {
-      //   image: 'assets/products/18.jpg',
+      //   image: 'assets/products/9.jpg',
       //   type: 'Modern',
       //   name: 'Ten Thousand Skies Above You',
       //   sale: false,
@@ -197,15 +184,28 @@ export class TopRatesBookComponent implements OnInit {
       //   reviews: 'No reviews',
       //   reviews_count: 0,
       //   rating: 4
-      // }
+      // }, {
+      //   image: 'assets/products/10.jpg',
+      //   type: 'Modern',
+      //   name: 'Consectetur Videntur',
+      //   sale: false,
+      //   btn_type: 'add',
+      //   vendor: 'Dolce & Gabbana',
+      //   price: 210.00,
+      //   price_compare: 212.12,
+      //   reviews: 'No reviews',
+      //   reviews_count: 0,
+      //   rating: 5
+      // },
     ]
   }
 
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
- GotoDetail(url:string){
+
+  GotoDetail(url: string) {
     const newurl = url.replace(/\s+/g, '-');
     const newurl1 = 'categories/collection';
     this.route.navigate([newurl1]);
   }
-  
+
 }

@@ -18,11 +18,10 @@ const routes: Routes = [
   { path: pageRoute?.books, component: DetailpageComponent },
   { path: pageRoute?.categories, loadChildren: () => import('../app/module/collections/collections.module').then(m => m.CollectionsModule) },
   { path: pageRoute?.veiled, component: NotfoundComponent }
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

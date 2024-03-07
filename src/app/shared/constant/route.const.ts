@@ -19,8 +19,8 @@ export const collRoute = {
     literature_fiction: 'literature-fiction',
     mystery_suspense: 'mystery-suspense',
     sci_fi_fantasy: 'sci-fi-fantasy',
-    collection: 'collection',
     current_bestsellers: 'current-bestsellers',
     limited_time_offer: 'limited-time-offer',
     top_rates_book: 'top-rates-book',
+    collection: 'collection',
 }

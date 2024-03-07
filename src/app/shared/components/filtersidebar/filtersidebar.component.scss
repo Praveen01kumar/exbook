@@ -1,0 +1,127 @@
+:host::ng-deep {
+    .sidebar-container {
+        .filters {
+            border-bottom: 1px solid #d1d1d1;
+
+            .heading {
+                .name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin: 0px;
+                }
+
+                .clear {
+                    color: #3b82f6;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    font-size: 12px;
+                }
+
+
+                padding: 0px 8px 18px 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .chip-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
+                padding-bottom: 16px;
+
+                .chip-item {
+                    .p-chip {
+                        font-size: 12px;
+                        font-weight: 700;
+                        background: #ededed;
+                        padding: 3px 12px;
+                    }
+                }
+
+            }
+        }
+
+        .price {
+            .heading {
+                .name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin: 0px;
+                }
+
+                .clear {
+                    color: #3b82f6;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    font-size: 12px;
+                }
+
+
+                padding: 16px 8px 18px 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .slider {
+                padding: 0px 8px 20px 8px;
+            }
+
+            .values {
+                padding: 0px 4px 12px 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                font-size: 14px;
+                font-weight: 600;
+                border-bottom: 1px solid #d1d1d1;
+                margin-bottom: 16px;
+                flex-wrap: nowrap;
+
+                .line {
+                    background-color: grey;
+                    width: 20px;
+                    height: 2px;
+                    border-radius: 1px;
+                }
+            }
+        }
+
+
+        .accordion {
+            .p-accordion {
+                .p-accordion-toggle-icon {
+                    position: absolute;
+                    right: 0;
+                }
+
+                .p-accordion-header-link {
+                    padding: 10px;
+                }
+
+                .p-accordion-content {
+                    padding: 0px;
+
+                    .p-listbox {
+                        border: 0px;
+
+                        .p-listbox-list-wrapper {
+                            padding: 0px 2px;
+                        }
+
+                        .p-listbox-header {
+                            padding: 4px 8px;
+
+                            .p-listbox-filter-container {
+                                input {
+                                    height: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

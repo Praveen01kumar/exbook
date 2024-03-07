@@ -1,5 +1,5 @@
 :host::ng-deep {
-    .top-rates-book {
+    .bestsellers {
         display: block;
         .card {
             .p-carousel-content {
@@ -9,7 +9,7 @@
                         background: #fff;
                         transition: all ease 0.3s;
                         padding: 20px;
-
+                        
                         &:hover {
                             box-shadow: 0 0 18px #0000001f;
                             cursor: pointer;
@@ -196,7 +196,7 @@
         }
     }
 
-    .top-rates-book1 {
+    .bestsellers1 {
         display: none;
         flex-wrap: wrap;
         justify-content: center;
@@ -318,11 +318,11 @@
 }
 
 @media (min-width:0px) and (max-width:991px) {
-    .top-rates-book {
+    .bestsellers {
         display: none;
     }
 
-    .top-rates-book1 {
+    .bestsellers1 {
         display: flex;
     }
 }

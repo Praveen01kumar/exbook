@@ -1,1 +1,114 @@
-<p>filtersidebar works!</p>
+<div class="sidebar-container">
+    <div class="filters">
+        <p class="heading">
+            <span class="name">Filters</span>
+            <span class="clear" (click)="clearAllFilter()">Clear All</span>
+        </p>
+        <div class="chip-list">
+            <span class="chip-item" *ngFor="let chip of appliedFiltersArr;">
+                <p-chip [label]="chip?.label" [removable]="true" (onRemove)="onChipRemove(chip)"></p-chip>
+            </span>
+        </div>
+    </div>
+    <div class="price">
+        <p class="heading">
+            <span class="name">Price</span>
+            <span class="clear" (click)="clearPrice()">Clear</span>
+        </p>
+        <div class="slider">
+            <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="minRangeValues" [max]="maxRangeValues"
+                (onSlideEnd)="onSliderEnd($event)"></p-slider>
+        </div>
+        <div class="values">
+            <span>{{rangeValues[0]}} $</span>
+            <span class="line"></span>
+            <span>{{rangeValues[1]}} $</span>
+        </div>
+    </div>
+    <div class="accordion">
+        <!-- [activeIndex]="[0,1,2,3,4,5,6,7,8,9,10]" -->
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Delivery Day">
+                <p-listbox [options]="DeliveryDay" [(ngModel)]="DeliveryDay_selectedItems"
+                    [selectAll]="DeliveryDay_selectAll" optionLabel="label" [style]="{ width: '15rem' }"
+                    [virtualScroll]="true" [filter]="true" [virtualScrollItemSize]="40" [multiple]="true"
+                    [checkbox]="true" [showToggleAll]="false" [metaKeySelection]="false" [showToggleAll]="false"
+                    (onSelectAllChange)="DeliveryDayAllChange($event)" (onChange)="DeliveryDayChange($event)"
+                    [listStyle]="{ 'max-height': '140px'}"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Category">
+                <p-listbox [options]="Category" [(ngModel)]="Category_selectedItems" [selectAll]="Category_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="CategoryAllChange($event)"
+                    (onChange)="CategoryChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Customer Rating">
+                <p-listbox [options]="CustomerRating" [(ngModel)]="CustomerRating_selectedItems"
+                    [selectAll]="CustomerRating_selectAll" optionLabel="label" [style]="{ width: '15rem' }"
+                    [virtualScroll]="true" [filter]="true" [virtualScrollItemSize]="40" [multiple]="true"
+                    [checkbox]="true" [showToggleAll]="false" [metaKeySelection]="false" [showToggleAll]="false"
+                    (onSelectAllChange)="CustomerRatingAllChange($event)" (onChange)="CustomerRatingChange($event)"
+                    [listStyle]="{ 'max-height': '100px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Languages">
+                <p-listbox [options]="Languages" [(ngModel)]="Languages_selectedItems" [selectAll]="Languages_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="LanguagesAllChange($event)"
+                    (onChange)="LanguagesChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Author">
+                <p-listbox [options]="Author" [(ngModel)]="Author_selectedItems" [selectAll]="Author_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="AuthorAllChange($event)"
+                    (onChange)="AuthorChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Discount">
+                <p-listbox [options]="Discount" [(ngModel)]="Discount_selectedItems" [selectAll]="Discount_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="DiscountAllChange($event)"
+                    (onChange)="DiscountChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Binding">
+                <p-listbox [options]="Binding" [(ngModel)]="Binding_selectedItems" [selectAll]="Binding_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="BindingAllChange($event)"
+                    (onChange)="BindingChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Age Group">
+                <p-listbox [options]="AgeGroup" [(ngModel)]="AgeGroup_selectedItems" [selectAll]="AgeGroup_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="AgeGroupAllChange($event)"
+                    (onChange)="AgeGroupChange($event)" [listStyle]="{ 'max-height': '200px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Latest Arrivals">
+                <p-listbox [options]="LatestArrivals" [(ngModel)]="LatestArrivals_selectedItems"
+                    [selectAll]="LatestArrivals_selectAll" optionLabel="label" [style]="{ width: '15rem' }"
+                    [virtualScroll]="true" [filter]="true" [virtualScrollItemSize]="40" [multiple]="true"
+                    [checkbox]="true" [showToggleAll]="false" [metaKeySelection]="false" [showToggleAll]="false"
+                    (onSelectAllChange)="LatestArrivalsAllChange($event)" (onChange)="LatestArrivalsChange($event)"
+                    [listStyle]="{ 'max-height': '140px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Availability">
+                <p-listbox [options]="Availability" [(ngModel)]="Availability_selectedItems"
+                    [selectAll]="Availability_selectAll" optionLabel="label" [style]="{ width: '15rem' }"
+                    [virtualScroll]="true" [filter]="true" [virtualScrollItemSize]="40" [multiple]="true"
+                    [checkbox]="true" [showToggleAll]="false" [metaKeySelection]="false" [showToggleAll]="false"
+                    (onSelectAllChange)="AvailabilityAllChange($event)" (onChange)="AvailabilityChange($event)"
+                    [listStyle]="{ 'max-height': '60px' }"></p-listbox>
+            </p-accordionTab>
+            <p-accordionTab header="Offers">
+                <p-listbox [options]="Offers" [(ngModel)]="Offers_selectedItems" [selectAll]="Offers_selectAll"
+                    optionLabel="label" [style]="{ width: '15rem' }" [virtualScroll]="true" [filter]="true"
+                    [virtualScrollItemSize]="40" [multiple]="true" [checkbox]="true" [showToggleAll]="false"
+                    [metaKeySelection]="false" [showToggleAll]="false" (onSelectAllChange)="OffersAllChange($event)"
+                    (onChange)="OffersChange($event)" [listStyle]="{ 'max-height': '100px' }"></p-listbox>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>
