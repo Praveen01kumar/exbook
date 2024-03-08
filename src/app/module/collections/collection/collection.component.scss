@@ -22,6 +22,7 @@
         border-radius: 8px;
         position: relative;
         transition: all 0.3s ease-in-out;
+        width: 100%;
 
         .product-list {
             display: flex;
@@ -37,8 +38,8 @@
                 transition: all ease 0.3s;
                 padding: 8px;
                 border-radius: 4px;
-                max-width: 200px;
-                min-width: 200px;
+                max-width: 220px;
+                min-width: 220px;
 
                 .product-image {
                     position: relative;
@@ -86,7 +87,7 @@
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         overflow: hidden;
-                        width: 110px;
+                        width: 200px;
                     }
 
                     .vendor {
@@ -133,28 +134,91 @@
                 }
 
                 @media (min-width:0px) and (max-width:320px) {
-                    max-width: 120px;
-                    min-width: 120px;
+                    max-width: 220px;
+                    min-width: 220px;
+
+                    .product-detail {
+                        .name {
+                            width: 200px;
+                        }
+                    }
                 }
 
-                @media (min-width:320px) and (max-width:380px) {
-                    max-width: 130px;
-                    min-width: 130px;
+                @media (min-width:320px) and (max-width:345px) {
+                    max-width: 240px;
+                    min-width: 240px;
+
+                    .product-detail {
+                        .name {
+                            width: 220px;
+                        }
+                    }
                 }
 
-                @media (min-width:380px) and (max-width:450px) {
+                @media (min-width:345px) and (max-width:380px) {
                     max-width: 140px;
                     min-width: 140px;
+
+                    .product-detail {
+                        .name {
+                            width: 120px;
+                        }
+                    }
                 }
 
-                @media (min-width:450px) and (max-width:600px) {
+                @media (min-width:380px) and (max-width:440px) {
+                    max-width: 150px;
+                    min-width: 150px;
+
+                    .product-detail {
+                        .name {
+                            width: 130px;
+                        }
+                    }
+                }
+
+                @media (min-width:440px) and (max-width:500px) {
                     max-width: 160px;
                     min-width: 160px;
+
+                    .product-detail {
+                        .name {
+                            width: 140px;
+                        }
+                    }
                 }
 
-                @media (min-width:600px) and (max-width:750px) {
+                @media (min-width:500px) and (max-width:560px) {
+                    max-width: 170px;
+                    min-width: 170px;
+
+                    .product-detail {
+                        .name {
+                            width: 150px;
+                        }
+                    }
+                }
+
+                @media (min-width:560px) and (max-width:620px) {
+                    max-width: 180px;
+                    min-width: 180px;
+
+                    .product-detail {
+                        .name {
+                            width: 180px;
+                        }
+                    }
+                }
+
+                @media (min-width:620px) and (max-width:750px) {
                     max-width: 200px;
                     min-width: 200px;
+
+                    .product-detail {
+                        .name {
+                            width: 180px;
+                        }
+                    }
                 }
             }
         }
@@ -176,7 +240,21 @@
                 font-size: 20px;
             }
         }
+
+        .data-loader {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i{
+                font-size: 2.5rem;
+                color: #368effcc;
+            }
+        }
+
     }
+
 }
 
 @media (min-width:0px) and (max-width:667px) {
@@ -189,7 +267,8 @@
 @media (min-width:0px) and (max-width:730px) {
     .book-listing {
         position: relative;
-        .filter-bar{
+
+        .filter-bar {
             padding: 26px 8px;
         }
     }

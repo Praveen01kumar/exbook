@@ -84,7 +84,7 @@ import { ChipModule } from 'primeng/chip';
     AccordionModule,
     ListboxModule,
     SliderModule,
-    ChipModule
+    ChipModule,
 
   ],
   exports: [

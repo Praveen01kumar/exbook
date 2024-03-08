@@ -1,14 +1,14 @@
 <app-topheader></app-topheader>
 <div class="book-listing">
     <div class="filter-bar" [ngClass]="sideBar?'sidebar-hiden':'sidebar-show'">
-        <filtersidebar></filtersidebar>
+        <filtersidebar [filterData]="filterData"></filtersidebar>
     </div>
     <div class="list-data">
         <button class="side-toggale" (click)="sideToggel()">
             <i class="pi" [ngClass]="sideBar?'pi-angle-left':'pi-angle-right'"></i>
         </button>
-        <div class="product-list">
-            <div class="product-item" (click)="GotoDetail(product?.name)" *ngFor="let product of products;">
+     <div class="product-list" *ngIf="products?.length">
+            <div class="product-item" (click)="GotoDetail(product?.name)" *ngFor="let product of productsDataList;">
                 <div class="product-image">
                     <span class="sale" *ngIf="product?.sale">sale</span>
                     <img [src]="product?.image" [alt]="product?.name" class="img" />
@@ -25,9 +25,10 @@
                     <span class="off">{{prctg(product?.price_compare, product?.price)}}% off</span>
                 </div>
             </div>
-        </div>
+        </div> 
+        <div class="data-loader" *ngIf="loader"><i class="pi pi-spin pi-spinner"></i></div>
+        <p-paginator *ngIf="products?.length" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="products.length"
+            [rowsPerPageOptions]="rowsPerPageOptions"></p-paginator>
     </div>
 </div>
 <app-footer></app-footer>
-
-<!-- [ngStyle]="{'display':sideBar?'none':'block'}"  -->

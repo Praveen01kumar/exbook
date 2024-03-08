@@ -30,6 +30,14 @@
                 gap: 4px;
                 padding-bottom: 16px;
 
+                .show-more {
+                    @extend .show-ml;
+                }
+
+                .show-less {
+                    @extend .show-ml;
+                }
+
                 .chip-item {
                     .p-chip {
                         font-size: 12px;
@@ -124,4 +132,18 @@
             }
         }
     }
+}
+
+.show-ml {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 6px;
+    background-color: #3b82f624;
+    width: 80%;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    margin: 6px auto -6px auto;
+    border-radius: 4px;
+    color: #3b82f6;
 }

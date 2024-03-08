@@ -1,5 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
+import { ApiService } from 'src/app/shared/services/api-service';
 
 @Component({
   selector: 'app-collection',
@@ -8,152 +10,21 @@ import { Router } from '@angular/router';
 })
 export class CollectionComponent implements OnInit {
   products!: any[];
+  productsDataList!: any[];
   sideBar: boolean = false;
   screenWidth: number;
-  constructor(private route: Router) { this.screenWidth = window?.innerWidth; }
-  // @HostListener('window:resize', ['$event'])
-  // onResize() {
-  //   this.screenWidth = window?.innerWidth;
-  //   if (this.screenWidth > 730) {
-  //     this.sideBar = false;
-  //   } else {
-  //     this.sideBar = true;
-  //   }
-  // }
+  first: number = 0;
+  rows: number = 30;
+  rowsPerPageOptions: number[] = [30, 60, 90, 120];
+  filterData: any;
+  loader: boolean = false;
+  constructor(
+    private route: Router,
+    private apiService: ApiService
+  ) { this.screenWidth = window?.innerWidth; }
 
   ngOnInit(): void {
-    this.products = [
-      {
-        image: 'assets/products/1.jpg',
-        type: 'Modern',
-        name: 'Consectetur Videntur',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Dolce & Gabbana',
-        price: 210.00,
-        price_compare: 212.12,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 5
-      },
-      {
-        image: 'assets/products/2.jpg',
-        type: 'Office',
-        name: 'The Trials Of Apollo',
-        sale: true,
-        btn_type: 'select',
-        vendor: 'Armani',
-        price: 12.40,
-        price_compare: 15.10,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 4
-      },
-      {
-        image: 'assets/products/3.jpg',
-        type: 'Party',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'select',
-        vendor: 'Christian Dior',
-        price: 12,
-        price_compare: 13,
-        reviews: 'review',
-        reviews_count: 1,
-        rating: 2
-      },
-      {
-        image: 'assets/products/4.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 112.00,
-        price_compare: 123,
-        reviews: 'reviews',
-        reviews_count: '1k',
-        rating: 4
-      },
-      {
-        image: 'assets/products/5.jpg',
-        type: 'Modern',
-        name: 'Consectetur Videntur',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Dolce & Gabbana',
-        price: 101,
-        price_compare: 102,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 5
-      },
-      {
-        image: 'assets/products/6.jpg',
-        type: 'Office',
-        name: 'The Trials Of Apollo',
-        sale: true,
-        btn_type: 'select',
-        vendor: 'Armani',
-        price: 300,
-        price_compare: 463,
-        reviews: 'reviews',
-        reviews_count: 20,
-        rating: 4
-      },
-      {
-        image: 'assets/products/7.jpg',
-        type: 'Party',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'select',
-        vendor: 'Christian Dior',
-        price: 12,
-        price_compare: 18,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 2
-      },
-      {
-        image: 'assets/products/8.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 12.01,
-        reviews: 'reviews',
-        reviews_count: 2,
-        rating: 4
-      },
-      {
-        image: 'assets/products/9.jpg',
-        type: 'Modern',
-        name: 'Ten Thousand Skies Above You',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Christian Dior',
-        price: 12.00,
-        price_compare: 0,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 4
-      },
-      {
-        image: 'assets/products/10.jpg',
-        type: 'Modern',
-        name: 'Consectetur Videntur',
-        sale: false,
-        btn_type: 'add',
-        vendor: 'Dolce & Gabbana',
-        price: 210.00,
-        price_compare: 212.12,
-        reviews: 'No reviews',
-        reviews_count: 0,
-        rating: 5
-      },
-    ]
+    this.onInitCall();
   }
 
   GotoDetail(url: string) {
@@ -168,4 +39,36 @@ export class CollectionComponent implements OnInit {
     this.sideBar = !this.sideBar;
   }
 
+  onInitCall() {
+    this.loader = true;
+    this.apiService.productsList().pipe(finalize(() => { this.loader = false; })).subscribe((res: any) => {
+      if (res) {
+        this.products = res?.products;
+        this.productsDataList = this.products?.slice(0, 30);
+        this.filterData = {
+          AgeGroup: res?.AgeGroup,
+          Author: res?.Author,
+          Availability: res?.Availability,
+          Binding: res?.Binding,
+          Category: res?.Category,
+          CustomerRating: res?.CustomerRating,
+          DeliveryDay: res?.DeliveryDay,
+          Discount: res?.Discount,
+          Languages: res?.Languages,
+          LatestArrivals: res?.LatestArrivals,
+          Offers: res?.Offers,
+          filterValue: res?.filterValue,
+          rangeValues: res?.rangeValues
+        }
+      }
+    }, (err) => {
+      this.loader = false;
+    });
+  }
+
+  onPageChange(event: any) {
+    this.first = event.first;
+    this.rows = event.rows;
+    this.productsDataList = this.products?.slice(this.first, this.first + this.rows);
+  }
 }

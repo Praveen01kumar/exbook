@@ -15,6 +15,7 @@ import { CurrentBestsellersComponent } from './current-bestsellers/current-bests
 import { LimitedTimeOfferComponent } from './limited-time-offer/limited-time-offer.component';
 import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     CollectionsRoutingModule,
-    SharedModule
+    SharedModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: []
