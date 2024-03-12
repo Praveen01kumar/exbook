@@ -8,6 +8,8 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { SellerRegisterComponent } from './pages/seller-register/seller-register.component';
 import { DetailpageComponent } from './pages/detailpage/detailpage.component';
+import { CartListingComponent } from './pages/cart-listing/cart-listing.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 const routes: Routes = [
   { path: pageRoute?.empty, component: HomeComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: pageRoute?.seller_register, component: SellerRegisterComponent },
   { path: pageRoute?.books, component: DetailpageComponent },
   { path: pageRoute?.categories, loadChildren: () => import('../app/module/collections/collections.module').then(m => m.CollectionsModule) },
+  { path: pageRoute?.cartlist, component: CartListingComponent },
+  { path: pageRoute?.checkout, component: CheckoutComponent },
   { path: pageRoute?.veiled, component: NotfoundComponent }
 ];
 

@@ -1,0 +1,117 @@
+<app-topheader></app-topheader>
+
+<div class="checkout-page">
+    <p-toast [breakpoints]="{'920px': {width: '90%', right: '0'}}"></p-toast>
+    <div class="cheout-steps">
+        <div class="deliver-to" *ngIf="islogedIn">
+            <div class="address-label">
+                <div class="label">Login: <i class="pi pi-check" style="color: green"></i></div>
+                <div class="address">Praveen Kumar +919128342132</div>
+            </div>
+            <div class="change-btn">
+                <button>Change</button>
+            </div>
+        </div>
+        <div class="steps">
+            <p-accordion [activeIndex]="1">
+                <p-accordionTab [disabled]="false" header="Login or Signup">
+                    <div class="log-form">
+                        <div class="login-form">
+                            <input class="input" pInputText placeholder="Enter Email/Mobile number"
+                                aria-describedby="username-help" />
+                            <small id="username-help">
+                                By continuing, you agree to Exbook's
+                                <a href="#">Terms of Use</a>
+                                and
+                                <a href="#">Privacy Policy</a>
+                            </small>
+                        </div>
+                        <div class="advantages">
+                            <h1 class="secure-login"> Advantages of our secure login</h1>
+                            <h1 class="track-orders"><i class="pi pi-truck" style="color: blue"></i> Easily Track
+                                Orders, Hassle free Returns</h1>
+                            <h1 class="relevant-alerts"><i class="pi pi-bell" style="color: blue"></i> Get Relevant
+                                Alerts and Recommendation</h1>
+                            <h1 class="and-more"><i class="pi pi-star" style="color: blue"></i> Wishlist, Reviews,
+                                Ratings and more.</h1>
+                        </div>
+                    </div>
+                    <div class="input-btn">
+                        <button>CONTINUE</button>
+                    </div>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="false" header="Delivery Address">
+                    <div class="address-list">
+                        <div class="list-item" *ngFor="let address of addressList; let i=index;">
+                            <p-radioButton [name]="address" [value]="address" [(ngModel)]="ingredient"
+                                inputId="ingredient{{i+1}}"></p-radioButton>
+                            <label for="ingredient{{i+1}}">
+                                <div class="name-type-contact-edit">
+                                    <div class="name-type-contact">
+                                        <span class="name">{{address?.name}}</span>
+                                        <span class="type">{{address?.type}}</span>
+                                        <span class="contact">{{address?.contact}}</span>
+                                    </div>
+                                    <div class="edit" *ngIf="ingredient==address">edit</div>
+                                </div>
+                                <div class="address">
+                                    <p>{{address?.address}}</p>
+                                </div>
+                                <div class="delever" *ngIf="ingredient==address">
+                                    <button>Deliver Here</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="add-more">
+                        <button> <i class="pi pi-plus"></i> Add a new address</button>
+                    </div>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="false" header="Order Summary">
+                    <p>
+                        order Summery
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="false" header="Payment Options">
+                    <p>
+                        Payment Options
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+    <div class="order-summery" *ngIf="islogedIn">
+        <div class="price-details">
+            <h1 class="heading">PRICE DETAILS</h1>
+            <h2 class="price">
+                <span class="label">Price ({{numberOfItem}} item)</span>
+                <span class="value">${{totalItemPrice.toFixed(2)}}</span>
+            </h2>
+            <h2 class="discount">
+                <span class="label">Discount</span>
+                <span class="value">- ${{totalDiscount.toFixed(2)}}</span>
+            </h2>
+            <h2 class="delivery-charges">
+                <span class="label">Delivery Charges</span>
+                <span>
+                    $<span class="chares">{{deliveryFee}}</span>
+                    <span class="free">Free</span>
+                </span>
+            </h2>
+            <h2 class="total-amount">
+                <span class="label">Total Amount</span>
+                <span class="value">${{totalPayablePrice.toFixed(2)}}</span>
+            </h2>
+            <h2 class="save">
+                You will save ${{will_save.toFixed(2)}} on this order
+            </h2>
+        </div>
+
+    </div>
+    <div class="safe-secure" *ngIf="!islogedIn">
+        <i class="pi pi-shield" style="color: green"></i>
+        <span>Safe and Secure Payments. Easy returns. 100% Authentic products.</span>
+    </div>
+</div>
+
+<app-footer></app-footer>

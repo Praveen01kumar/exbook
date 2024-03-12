@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'filtersidebar',
@@ -60,6 +60,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
 
   appliedFiltersArr: any[] = [];
   filterChipList: number = 4;
+  @Output() newItemEvent = new EventEmitter<any>();
 
   constructor() { }
 
@@ -69,7 +70,8 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
   DeliveryDayAllChange(event: any) {
     this.DeliveryDay_selectedItems = event.checked ? [...this.DeliveryDay] : [];
     this.DeliveryDay_selectAll = event.checked;
-    event.updateModel(this.DeliveryDay_selectedItems, event.originalEvent)
+    event.updateModel(this.DeliveryDay_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   DeliveryDayChange(event: any) {
@@ -79,12 +81,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.DeliveryDay_selectAll = value.length === this.DeliveryDay.length;
       this.selectedFilter(value, 'delivery_day');
     }
+    this.sendFilterValue();
   }
 
   CategoryAllChange(event: any) {
     this.Category_selectedItems = event.checked ? [...this.Category] : [];
     this.Category_selectAll = event.checked;
-    event.updateModel(this.Category_selectedItems, event.originalEvent)
+    event.updateModel(this.Category_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   CategoryChange(event: any) {
@@ -94,12 +98,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Category_selectAll = value.length === this.Category.length;
       this.selectedFilter(value, 'category');
     }
+    this.sendFilterValue();
   }
 
   CustomerRatingAllChange(event: any) {
     this.CustomerRating_selectedItems = event.checked ? [...this.CustomerRating] : [];
     this.CustomerRating_selectAll = event.checked;
-    event.updateModel(this.CustomerRating_selectedItems, event.originalEvent)
+    event.updateModel(this.CustomerRating_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   CustomerRatingChange(event: any) {
@@ -109,12 +115,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.CustomerRating_selectAll = value.length === this.CustomerRating.length;
       this.selectedFilter(value, 'customer_rating');
     }
+    this.sendFilterValue();
   }
 
   LanguagesAllChange(event: any) {
     this.Languages_selectedItems = event.checked ? [...this.Languages] : [];
     this.Languages_selectAll = event.checked;
-    event.updateModel(this.Languages_selectedItems, event.originalEvent)
+    event.updateModel(this.Languages_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   LanguagesChange(event: any) {
@@ -124,12 +132,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Languages_selectAll = value.length === this.Languages.length;
       this.selectedFilter(value, 'languages');
     }
+    this.sendFilterValue();
   }
 
   AuthorAllChange(event: any) {
     this.Author_selectedItems = event.checked ? [...this.Author] : [];
     this.Author_selectAll = event.checked;
-    event.updateModel(this.Author_selectedItems, event.originalEvent)
+    event.updateModel(this.Author_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   AuthorChange(event: any) {
@@ -139,12 +149,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Author_selectAll = value.length === this.Author.length;
       this.selectedFilter(value, 'author');
     }
+    this.sendFilterValue();
   }
 
   DiscountAllChange(event: any) {
     this.Discount_selectedItems = event.checked ? [...this.Discount] : [];
     this.Discount_selectAll = event.checked;
-    event.updateModel(this.Discount_selectedItems, event.originalEvent)
+    event.updateModel(this.Discount_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   DiscountChange(event: any) {
@@ -154,12 +166,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Discount_selectAll = value.length === this.Discount.length;
       this.selectedFilter(value, 'discount');
     }
+    this.sendFilterValue();
   }
 
   OffersAllChange(event: any) {
     this.Offers_selectedItems = event.checked ? [...this.Offers] : [];
     this.Offers_selectAll = event.checked;
-    event.updateModel(this.Offers_selectedItems, event.originalEvent)
+    event.updateModel(this.Offers_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   OffersChange(event: any) {
@@ -169,12 +183,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Offers_selectAll = value.length === this.Offers.length;
       this.selectedFilter(value, 'offers');
     }
+    this.sendFilterValue();
   }
 
   AvailabilityAllChange(event: any) {
     this.Availability_selectedItems = event.checked ? [...this.Availability] : [];
     this.Availability_selectAll = event.checked;
-    event.updateModel(this.Availability_selectedItems, event.originalEvent)
+    event.updateModel(this.Availability_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   AvailabilityChange(event: any) {
@@ -184,12 +200,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Availability_selectAll = value.length === this.Availability.length;
       this.selectedFilter(value, 'availability');
     }
+    this.sendFilterValue();
   }
 
   BindingAllChange(event: any) {
     this.Binding_selectedItems = event.checked ? [...this.Binding] : [];
     this.Binding_selectAll = event.checked;
-    event.updateModel(this.Binding_selectedItems, event.originalEvent)
+    event.updateModel(this.Binding_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   BindingChange(event: any) {
@@ -199,12 +217,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.Binding_selectAll = value.length === this.Binding.length;
       this.selectedFilter(value, 'binding');
     }
+    this.sendFilterValue();
   }
 
   AgeGroupAllChange(event: any) {
     this.AgeGroup_selectedItems = event.checked ? [...this.AgeGroup] : [];
     this.AgeGroup_selectAll = event.checked;
-    event.updateModel(this.AgeGroup_selectedItems, event.originalEvent)
+    event.updateModel(this.AgeGroup_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   AgeGroupChange(event: any) {
@@ -214,12 +234,14 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.AgeGroup_selectAll = value.length === this.AgeGroup.length;
       this.selectedFilter(value, 'age_group');
     }
+    this.sendFilterValue();
   }
 
   LatestArrivalsAllChange(event: any) {
     this.LatestArrivals_selectedItems = event.checked ? [...this.LatestArrivals] : [];
     this.LatestArrivals_selectAll = event.checked;
-    event.updateModel(this.LatestArrivals_selectedItems, event.originalEvent)
+    event.updateModel(this.LatestArrivals_selectedItems, event.originalEvent);
+    this.sendFilterValue();
   }
 
   LatestArrivalsChange(event: any) {
@@ -229,6 +251,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.LatestArrivals_selectAll = value.length === this.LatestArrivals.length;
       this.selectedFilter(value, 'latest_arrivals');
     }
+    this.sendFilterValue();
   }
 
   onChipRemove(event: any) {
@@ -274,11 +297,12 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
         }
       }
       this.appliedFiltersArr = this.appliedFiltersArr.filter(item => item?.value !== event?.value);
+      this.sendFilterValue();
     }
   }
 
   onSliderEnd(event: any) {
-    const value = { label: `${event?.values[0]}-${event?.values[1]}`, value: 'price_range_value', type: 'price_range' };
+    const value = { label: `${event?.values[0]}-${event?.values[1]}`, value: {min:event?.values[0], max:event?.values[1]}, type: 'price_range' };
     const exists = this.appliedFiltersArr.some((item: any) => item?.type === 'price_range');
     if (!exists) {
       this.appliedFiltersArr.push(value);
@@ -288,6 +312,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
         this.appliedFiltersArr[index] = value;
       }
     }
+    this.sendFilterValue();
   }
 
   clearAllFilter() {
@@ -304,6 +329,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
     this.AgeGroup_selectedItems = [];
     this.LatestArrivals_selectedItems = [];
     this.rangeValues = [0, 10000];
+    this.sendFilterValue();
   }
 
   clearPrice() {
@@ -312,6 +338,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
     if (index >= 0) {
       this.appliedFiltersArr.splice(index, 1);
     }
+    this.sendFilterValue();
   }
 
   removeUnchecked(value: any[]) {
@@ -329,7 +356,7 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
     }
   }
 
-  showML() {
+  show_M_L() {
     this.showLess_more = !this.showLess_more;
     if (!this.showLess_more) {
       this.filterChipList = 4;
@@ -352,6 +379,12 @@ export class FiltersidebarComponent implements OnInit, OnChanges {
       this.LatestArrivals = this.filterData?.LatestArrivals;
       this.Offers = this.filterData?.Offers;
       this.rangeValues = this.filterData?.rangeValues
+      this.sendFilterValue();
     }
   }
+
+  sendFilterValue() {
+    this.newItemEvent.emit(this.appliedFiltersArr);
+  }
+
 }

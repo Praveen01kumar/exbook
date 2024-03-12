@@ -37,7 +37,10 @@ import { AccordionModule } from 'primeng/accordion';
 import { ListboxModule } from 'primeng/listbox';
 import { SliderModule } from 'primeng/slider';
 import { ChipModule } from 'primeng/chip';
-
+import { ToastModule } from 'primeng/toast';
+import { CartListingComponent } from '../pages/cart-listing/cart-listing.component';
+import { CheckoutComponent } from '../pages/checkout/checkout.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
 
@@ -63,7 +66,8 @@ import { ChipModule } from 'primeng/chip';
     StacksComponent,
     DetailpageComponent,
     RelatedProductsComponent,
-    
+    CartListingComponent,
+    CheckoutComponent,
 
   ],
   imports: [
@@ -85,7 +89,9 @@ import { ChipModule } from 'primeng/chip';
     ListboxModule,
     SliderModule,
     ChipModule,
-
+    ToastModule,
+    RadioButtonModule,
+    
   ],
   exports: [
     CommonModule,

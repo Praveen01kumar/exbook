@@ -5,7 +5,9 @@ export const pageRoute = {
     user_register: 'user-register',
     seller_register: 'seller-register',
     books: 'books/:id',
+    cartlist: 'cart-list',
     categories: 'categories',
+    checkout: 'checkout',
     veiled: '**',
 }
 

@@ -1,0 +1,87 @@
+<app-topheader></app-topheader>
+<p-toast [breakpoints]="{'920px': {width: '90%', right: '0'}}"></p-toast>
+<div class="cart-list-container">
+    <div class="cart-list">
+        <div class="deliver-to">
+            <div class="address-label">
+                <div class="label">Deliver to: </div>
+                <div class="address">Chandigarh - 160065</div>
+            </div>
+            <div class="change-btn">
+                <button>Change</button>
+            </div>
+        </div>
+        <div class="item-list">
+            <ng-container *ngFor="let item of cartList;">
+                <div class="listing-item">
+                    <div class="image">
+                        <img [src]="item?.image" [alt]="item?.name">
+                    </div>
+                    <div class="item-detial">
+                        <h1 class="name">{{item?.name}}</h1>
+                        <h2 class="seller">
+                            <span class="label">Seller:</span>
+                            <span class="name">{{item?.vendor}}</span>
+                        </h2>
+                        <h2 class="price-compare-price-prctg">
+                            <span class="price-compare">${{item?.price_compare}}</span>
+                            <span class="price">${{item?.price}}</span>
+                            <span class="prctg">{{prctg(item?.price_compare,item?.price)}}% Off</span>
+                        </h2>
+                        <div class="save-for-later-remove">
+                            <button class="save-for-later">save for later</button>
+                            <button class="remove" (click)="removeFromCart(item)">remove</button>
+                        </div>
+                    </div>
+                    <div class="delivery-detail">
+                        <div class="detail">
+                            <span class="date">Delivery by Thu Mar 14 |</span>
+                            <span class="chares">$4</span>
+                            <span class="free">Free</span>
+                        </div>
+                        <div class="actions">
+                            <div class="quantity-btns">
+                                <button class="minus" (click)="quantity('-', item)"><i class="pi pi-minus"></i></button>
+                                <p-inputNumber [(ngModel)]="item.quantity" [min]="1" [max]="100"> </p-inputNumber>
+                                <button class="plus" (click)="quantity('+', item)"><i class="pi pi-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="place-order">
+                <button (click)="gotoRoute('checkout')">Place Order</button>
+            </div>
+        </div>
+    </div>
+    <div class="price-details">
+        <h1 class="heading">PRICE DETAILS</h1>
+        <h2 class="price">
+            <span class="label">Price ({{numberOfItem}} item)</span>
+            <span class="value">${{totalItemPrice.toFixed(2)}}</span>
+        </h2>
+        <h2 class="discount">
+            <span class="label">Discount</span>
+            <span class="value">- ${{totalDiscount.toFixed(2)}}</span>
+        </h2>
+        <h2 class="delivery-charges">
+            <span class="label">Delivery Charges</span>
+            <span>
+                $<span class="chares">{{deliveryFee}}</span>
+                <span class="free">Free</span>
+            </span>
+        </h2>
+        <h2 class="total-amount">
+            <span class="label">Total Amount</span>
+            <span class="value">${{totalPayablePrice.toFixed(2)}}</span>
+        </h2>
+        <h2 class="save">
+            You will save ${{will_save.toFixed(2)}} on this order
+        </h2>
+    </div>
+    <div class="place-order-design">
+        <button (click)="gotoRoute('checkout')">Place Order</button>
+    </div>
+</div>
+
+<app-footer></app-footer>

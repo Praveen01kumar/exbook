@@ -1,0 +1,409 @@
+.checkout-page {
+    margin-top: 90px;
+    padding: 0px 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+
+    .cheout-steps {
+        width: 60%;
+
+        .deliver-to {
+            margin-bottom: 10px;
+            @extend .box-design;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .address-label {
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    color: #878787;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+
+                .address {
+                    color: #111112;
+                    font-weight: 600;
+                    margin-top: 4px;
+                }
+            }
+
+            .change-btn {
+                button {
+                    border: 1px solid #e0e0e0;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    padding: 10px 16px;
+                    color: #2874f0;
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: all ease 0.5s;
+
+                    &:hover {
+                        color: #ffffff;
+                        background-color: #2874f0;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .order-summery {
+        width: 20%;
+    }
+
+    .safe-secure {
+        width: 20%;
+        @extend .box-design;
+        height: fit-content;
+
+        span {
+            margin-left: 4px;
+            color: #878787;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
+.price-details {
+    @extend .box-design;
+    width: 100%;
+    height: fit-content;
+
+    .heading {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #878787;
+        font-size: 16px;
+        border-bottom: 1px solid #8787874f;
+        padding-bottom: 5px;
+    }
+
+    .price {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            color: #212121;
+        }
+
+        .value {
+            color: #212121;
+        }
+    }
+
+    .discount {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            color: #212121;
+        }
+
+        .value {
+            color: #388e3c;
+        }
+    }
+
+    .delivery-charges {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            color: #212121;
+        }
+
+        .chares {
+            color: #717478;
+            margin-right: 4px;
+            text-decoration: line-through;
+        }
+
+        .free {
+            color: #388e3c;
+        }
+    }
+
+    .total-amount {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        color: #212121;
+        font-weight: 600;
+        border-top: 1px dashed #e0e0e0;
+        padding-top: 12px;
+        border-bottom: 1px dashed #e0e0e0;
+        padding-bottom: 12px;
+
+        .label {
+            color: #212121;
+        }
+
+        .value {
+            color: #212121;
+        }
+    }
+
+    .save {
+        font-size: 16px;
+        margin-bottom: 0px;
+        color: #388e3c;
+        font-weight: 600;
+    }
+}
+
+.box-design {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1019607843);
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 20px 1rem;
+}
+
+:host::ng-deep {
+    .checkout-page {
+        .p-accordion {
+            .p-accordion-tab {
+                .p-accordion-header {
+                    .p-accordion-header-link {
+                        &:hover {
+                            background: #1b8bcc;
+                            border-color: #1b8bcc;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .p-highlight {
+                    .p-accordion-header-link {
+                        background: #1b8bcc;
+                        border-color: #1b8bcc;
+                        color: #fff;
+                    }
+                }
+
+                .p-toggleable-content {
+                    .log-form {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+
+                        .login-form {
+
+                            .input {
+                                color: grey;
+                                font-size: 14px;
+                            }
+
+                            #username-help {
+                                display: block;
+                                margin-top: 4px;
+                                color: grey;
+                                font-size: 12px;
+                                font-weight: 400;
+
+                                a {
+                                    color: blue;
+                                }
+                            }
+                        }
+
+                        .advantages {
+                            color: #212121;
+
+                            .secure-login {
+                                color: #878787;
+                                margin-top: 0px;
+                                font-size: 14px;
+                            }
+
+                            .track-orders {
+                                margin-top: 0px;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            .relevant-alerts {
+                                margin-top: 0px;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            .and-more {
+                                margin-top: 0px;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    .input-btn {
+                        button {
+                            @extend .continue-btn;
+                        }
+                    }
+
+                    .address-list {
+                        .list-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 4px;
+                            padding: 12px 0px;
+                            border-bottom: 1px solid #f0f0f0;
+
+                            label {
+
+                                .name-type-contact-edit {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    .name-type-contact {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 6px;
+
+                                        .name {
+                                            color: #212121;
+                                            font-size: 14px;
+                                            font-weight: 600;
+                                        }
+
+                                        .type {
+                                            background: #1b8bcc30;
+                                            color: #1B8BCC;
+                                            padding: 2px 4px;
+                                            font-size: 12px;
+                                            border-radius: 2px;
+                                        }
+
+                                        .contact {
+                                            color: #212121;
+                                            font-size: 14px;
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    .edit {
+                                        text-transform: uppercase;
+                                        color: #1B8BCC;
+                                        cursor: pointer;
+                                        transition: all ease 0.5s;
+
+                                        &:hover {
+                                            text-decoration: underline;
+                                        }
+                                    }
+                                }
+
+                                .address {
+                                    p {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .delever {
+                                    button {
+                                        @extend .continue-btn;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .add-more {
+                        margin-top: 16px;
+                        button{
+                            background-color: transparent;
+                            border: 1px solid #1B8BCC;
+                            padding: 4px 12px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #1B8BCC;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            gap: 4px;
+                            transition: all 0.35s ease 0s;
+                            &:hover {
+                                background: #1b8bcc;
+                                color: #fff;
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.continue-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #fff;
+    color: #1b8bcc;
+    border: 1px solid #1b8bcc;
+    transition: all 0.35s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+        background: #1b8bcc;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+}
+
+@media (min-width:0px) and (max-width:667px) {
+    .checkout-page {
+        margin-top: 200px;
+    }
+
+}
+
+// @media (min-width:0px) and (max-width:320px) {
+
+// }
+
+// @media (min-width:320px) and (max-width:500px) {
+
+// }
+
+// @media (min-width:500px) and (max-width:600px) {
+
+// }
+
+// @media (min-width:600px) and (max-width:850px) {
+
+// }
+
+// @media (min-width:850px) and (max-width:1000px) {
+
+// }
+
+// @media (min-width:1000px) and (max-width:1150px) {
+
+// }
+
+
+
+
+@media (min-width:0px) and (max-width:667px) {
+    .checkout-page {
+        margin-top: 180px;
+    }
+
+}

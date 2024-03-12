@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { SharedService } from '../../services/shared-service';
 
 @Component({
   selector: 'app-topheader',
@@ -8,10 +9,13 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./topheader.component.scss']
 })
 export class TopheaderComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public sharedService: SharedService
+  ) { }
   userMenuitems: MenuItem[] | undefined;
   settingMenuitems: MenuItem[] | undefined;
-
+  cartitem: any[] = [];
   ngOnInit() {
     this.callOninit();
   }
@@ -87,6 +91,14 @@ export class TopheaderComponent implements OnInit {
         ]
       }
     ];
+    const cartItem = localStorage.getItem('cartItem');
+    this.cartitem = cartItem ? JSON.parse(cartItem) : [];
+    this.sharedService.cartItem$.subscribe((data: any) => {
+      if (data?.length) {
+        const cartItem = localStorage.getItem('cartItem');
+        this.cartitem = cartItem ? JSON.parse(cartItem) : [];
+      }
+    });
 
   }
 

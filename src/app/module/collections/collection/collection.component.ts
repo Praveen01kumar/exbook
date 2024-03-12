@@ -18,6 +18,7 @@ export class CollectionComponent implements OnInit {
   rowsPerPageOptions: number[] = [30, 60, 90, 120];
   filterData: any;
   loader: boolean = false;
+  newProductList!: any[];
   constructor(
     private route: Router,
     private apiService: ApiService
@@ -27,9 +28,9 @@ export class CollectionComponent implements OnInit {
     this.onInitCall();
   }
 
-  GotoDetail(url: string) {
-    const newurl = url.replace(/\s+/g, '-');
-    this.route.navigate(['books/' + newurl]);
+  GotoDetail(url: any) {
+    const newurl = url?.name?.replace(/\s+/g, '-');
+    this.route.navigate(['books/' + newurl], { queryParams: { id: url?.id,} });
   }
 
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
@@ -70,5 +71,17 @@ export class CollectionComponent implements OnInit {
     this.first = event.first;
     this.rows = event.rows;
     this.productsDataList = this.products?.slice(this.first, this.first + this.rows);
+  }
+
+  addItem(event: any) {
+    this.newProductList = this.products;
+    for (let filter of event) {
+      if (filter.type === 'price_range') {
+        this.newProductList = this.newProductList.filter(product => { return product?.price >= filter?.value?.min && product?.price <= filter?.value?.max; });
+      } else {
+        this.newProductList = this.newProductList.filter(product => product[filter?.type] === filter?.value);
+      }
+    }
+    this.productsDataList = this.newProductList?.slice(0, 30);
   }
 }

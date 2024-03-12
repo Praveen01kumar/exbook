@@ -8,9 +8,9 @@
             <span class="chip-item" *ngFor="let chip of appliedFiltersArr.slice(0, filterChipList);">
                 <p-chip [label]="chip?.label" [removable]="true" (onRemove)="onChipRemove(chip)"></p-chip>
             </span>
-            <span class="show-more" *ngIf="(appliedFiltersArr.length>4)&&(!showLess_more)" (click)="showML()">Show
+            <span class="show-more" *ngIf="(appliedFiltersArr.length>4)&&(!showLess_more)" (click)="show_M_L()">Show
                 more</span>
-            <span class="show-less" *ngIf="(appliedFiltersArr.length>4)&&(showLess_more)" (click)="showML()">Show
+            <span class="show-less" *ngIf="(appliedFiltersArr.length>4)&&(showLess_more)" (click)="show_M_L()">Show
                 less</span>
         </div>
     </div>

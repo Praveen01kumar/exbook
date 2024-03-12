@@ -17,8 +17,8 @@
                 </div>
                 <div>
                     <p-button [text]="true" [rounded]="true" pTooltip="Cart" tooltipPosition="left"
-                        icon="pi pi-shopping-cart" class="cart-button" severity="secondary">
-                        <span class="cart-count">0</span>
+                        icon="pi pi-shopping-cart" class="cart-button" severity="secondary" (onClick)="gotoRoute('cart-list')">
+                        <span class="cart-count">{{cartitem.length}}</span>
                     </p-button>
                 </div>
                 <div>
