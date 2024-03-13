@@ -41,6 +41,15 @@ import { ToastModule } from 'primeng/toast';
 import { CartListingComponent } from '../pages/cart-listing/cart-listing.component';
 import { CheckoutComponent } from '../pages/checkout/checkout.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { OrdersComponent } from '../pages/orders/orders.component';
+import { WishlistComponent } from '../pages/wishlist/wishlist.component';
+import { TermsofUseComponent } from '../pages/termsof-use/termsof-use.component';
+import { PrivacyPolicyComponent } from '../pages/privacy-policy/privacy-policy.component';
+import { GiftCardsComponent } from '../pages/gift-cards/gift-cards.component';
+import { RewardsComponent } from '../pages/rewards/rewards.component';
+import { MyProfileComponent } from '../pages/my-profile/my-profile.component';
+import { SupportsComponent } from '../pages/supports/supports.component';
+import { AdvertiseComponent } from '../pages/advertise/advertise.component';
 
 @NgModule({
 
@@ -68,7 +77,15 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     RelatedProductsComponent,
     CartListingComponent,
     CheckoutComponent,
-
+    OrdersComponent,
+    WishlistComponent,
+    TermsofUseComponent,
+    PrivacyPolicyComponent,
+    GiftCardsComponent,
+    RewardsComponent,
+    MyProfileComponent,
+    SupportsComponent,
+    AdvertiseComponent,
   ],
   imports: [
     CommonModule,
@@ -103,7 +120,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     LimitedOfferComponent,
     StacksComponent,
     RelatedProductsComponent,
-    FiltersidebarComponent
+    FiltersidebarComponent,
   ],
   providers: []
 

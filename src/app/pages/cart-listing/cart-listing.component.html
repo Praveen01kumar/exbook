@@ -1,4 +1,5 @@
 <app-topheader></app-topheader>
+
 <p-toast [breakpoints]="{'920px': {width: '90%', right: '0'}}"></p-toast>
 <div class="cart-list-container">
     <div class="cart-list">
@@ -36,7 +37,7 @@
                     <div class="delivery-detail">
                         <div class="detail">
                             <span class="date">Delivery by Thu Mar 14 |</span>
-                            <span class="chares">$4</span>
+                            <span class="chares">${{item?.delivery_fee}}</span>
                             <span class="free">Free</span>
                         </div>
                         <div class="actions">
@@ -50,7 +51,7 @@
                 </div>
             </ng-container>
             <div class="place-order">
-                <button (click)="gotoRoute('checkout')">Place Order</button>
+                <button (click)="gotoRoute(pageRoute?.checkout)">Place Order</button>
             </div>
         </div>
     </div>
@@ -80,7 +81,7 @@
         </h2>
     </div>
     <div class="place-order-design">
-        <button (click)="gotoRoute('checkout')">Place Order</button>
+        <button (click)="gotoRoute(pageRoute?.checkout)">Place Order</button>
     </div>
 </div>
 

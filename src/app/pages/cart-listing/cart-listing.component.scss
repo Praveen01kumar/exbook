@@ -1,11 +1,8 @@
 .cart-list-container {
-    margin-top: 70px;
-    padding: 0px 1rem;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     gap: 20px;
-    width: 100%;
 
     .cart-list {
         width: 50%;
@@ -308,7 +305,7 @@
 
         .chares {
             color: #717478;
-            margin-right:4px;
+            margin-right: 4px;
             text-decoration: line-through;
         }
 
@@ -401,13 +398,6 @@
             }
         }
     }
-}
-
-@media (min-width:0px) and (max-width:667px) {
-    .cart-list-container {
-        margin-top: 180px;
-    }
-
 }
 
 @media (min-width:0px) and (max-width:320px) {

@@ -116,6 +116,27 @@
             }
         }
 
+        .category-button {
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+            position: relative;
+
+            .p-button {
+                width: 3rem;
+                height: 3rem;
+
+                .pi {
+                    font-size: 1.3rem;
+                }
+            }
+            .svg-icon{
+                position: absolute;
+                top: 11px;
+                left: 11px;
+            }
+        }
+
         .notification-button {
             height: 48px;
             width: 48px;

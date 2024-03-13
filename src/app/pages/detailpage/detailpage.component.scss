@@ -1,9 +1,7 @@
 .detial-container {
-    padding: 20px 1rem;
     display: flex;
     box-shadow: 0 1px 2px #0000001a;
     background: #fff;
-    margin: 70px 20px 8px 20px;
     transition: .5s;
     border-radius: 8px;
 
@@ -372,12 +370,7 @@
 }
 
 @media (min-width:0px) and (max-width:667px) {
-    .detial-container {
-        margin: 180px 8px 8px 8px;
-    }
-
     .detial {
-
         .detail-table {
             th {
                 width: 160px !important;

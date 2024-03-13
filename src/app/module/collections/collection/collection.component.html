@@ -1,4 +1,5 @@
 <app-topheader></app-topheader>
+
 <div class="book-listing">
     <div class="filter-bar" [ngClass]="sideBar?'sidebar-hiden':'sidebar-show'">
         <filtersidebar [filterData]="filterData" (newItemEvent)="addItem($event)"></filtersidebar>

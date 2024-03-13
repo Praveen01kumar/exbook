@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { collRoute } from 'src/app/shared/constant/route.const';
+import { collRoute, pageRoute } from 'src/app/shared/constant/route.const';
 import { CollectionsdashComponent } from './collectionsdash/collectionsdash.component';
-import { AllCollectionsComponent } from './all-collections/all-collections.component';
 import { ArtsPhotographyComponent } from './arts-photography/arts-photography.component';
 import { BiographiesMemoirsComponent } from './biographies-memoirs/biographies-memoirs.component';
 import { ChildrensBooksComponent } from './childrens-books/childrens-books.component';
@@ -27,8 +26,7 @@ const routes: Routes = [
     { path: collRoute.current_bestsellers, component: CurrentBestsellersComponent },
     { path: collRoute.limited_time_offer, component: LimitedTimeOfferComponent },
     { path: collRoute.top_rates_book, component: TopRatesBookComponent },
-    { path: collRoute.all_collections, component: AllCollectionsComponent },
-    { path: collRoute.collection, component: CollectionComponent },
+    { path: pageRoute.collection, component: CollectionComponent },
 
 ];
 

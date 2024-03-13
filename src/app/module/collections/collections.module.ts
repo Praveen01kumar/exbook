@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollectionsRoutingModule } from './collections.routing.module';
 import { CollectionsdashComponent } from './collectionsdash/collectionsdash.component';
-import { AllCollectionsComponent } from './all-collections/all-collections.component';
 import { ArtsPhotographyComponent } from './arts-photography/arts-photography.component';
 import { BiographiesMemoirsComponent } from './biographies-memoirs/biographies-memoirs.component';
 import { ChildrensBooksComponent } from './childrens-books/childrens-books.component';
@@ -20,7 +19,6 @@ import { PaginatorModule } from 'primeng/paginator';
 @NgModule({
   declarations: [
     CollectionsdashComponent,
-    AllCollectionsComponent,
     ArtsPhotographyComponent,
     BiographiesMemoirsComponent,
     ChildrensBooksComponent,

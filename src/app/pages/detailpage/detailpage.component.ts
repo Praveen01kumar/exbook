@@ -1,8 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/shared/services/api-service';
 import { SharedService } from 'src/app/shared/services/shared-service';
 import { MessageService } from 'primeng/api';
+import { pageRoute } from 'src/app/shared/constant/route.const';
 
 @Component({
   selector: 'app-detailpage',
@@ -25,6 +26,7 @@ export class DetailpageComponent implements OnInit {
   }
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private apiService: ApiService,
     public shardService: SharedService,
     private messageService: MessageService
@@ -136,7 +138,9 @@ export class DetailpageComponent implements OnInit {
   }
 
   buyNow(product: any) {
-
+    const itemList: any[] = [product];
+    this.router.navigate([pageRoute?.checkout]);
+    localStorage.setItem('order_summary', JSON.stringify(itemList));
   }
 
 

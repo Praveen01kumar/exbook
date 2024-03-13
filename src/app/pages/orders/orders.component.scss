@@ -1,0 +1,186 @@
+.orders-page {
+    
+    .item-list {
+        width: 50%;
+        margin: auto;
+        .listing-item {
+            @extend .box-design;
+            display: flex;
+            justify-content: space-between;
+
+            .image {
+                width: 84px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1019607843);
+                padding: 2px;
+                border-radius: 8px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: fill;
+                    border-radius: 8px;
+                }
+            }
+
+            .item-detial {
+                .name {
+                    font-size: 16px;
+                    color: #212121;
+                    margin-bottom: 0px;
+                    margin-top: 4px;
+                    white-space: nowrap;
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 250px;
+                }
+
+                .seller {
+                    margin-bottom: 0px;
+                    margin-top: 4px;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    white-space: nowrap;
+
+                    .label {
+                        font-size: 14px;
+                    }
+
+                    .name {
+                        color: #878787;
+                        font-size: 14px;
+                        margin-top: 0px;
+                    }
+                }
+
+                .price-compare-price-prctg {
+                    margin-bottom: 0px;
+                    margin-top: 4px;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .price-compare {
+                        font-size: 14px;
+                        color: #878787;
+                        text-decoration: line-through;
+                    }
+
+                    .price {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #212121;
+                    }
+                }
+
+                .prctg {
+                    font-weight: 500;
+                    color: #388e3c;
+                    font-size: 14px;
+                }
+            }
+
+            .delivery-detail {
+                .detail {
+                    .date {
+                        font-size: 14px;
+                        color: #212121;
+                    }
+
+                    .chares {
+                        color: #717478;
+                        text-decoration: line-through;
+                        margin: 0px 4px;
+                    }
+
+                    .free {
+                        color: #717478;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.box-design {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1019607843);
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 20px 1rem;
+    margin: 10px 0px;
+}
+
+@media (min-width:0px) and (max-width:320px) {
+    .orders-page {
+        .item-list {
+            width: 100%;
+            margin: auto;
+            .listing-item{
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+    
+}
+
+@media (min-width:320px) and (max-width:500px) {
+    .orders-page {
+        .item-list {
+            width: 100%;
+            margin: auto;
+            .listing-item{
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+@media (min-width:500px) and (max-width:600px) {
+    .orders-page {
+        .item-list {
+            width: 100%;
+            margin: auto;
+            .listing-item{
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+@media (min-width:600px) and (max-width:850px) {
+    .orders-page {
+        .item-list {
+            width: 100%;
+            margin: auto;
+        }
+    }
+   
+}
+
+@media (min-width:850px) and (max-width:1000px) {
+    .orders-page {
+        .item-list {
+            width: 70%;
+            margin: auto;
+        }
+    }
+}
+
+@media (min-width:1000px) and (max-width:1150px) {
+    .orders-page {
+        .item-list {
+            width: 60%;
+            margin: auto;
+        }
+    }
+}

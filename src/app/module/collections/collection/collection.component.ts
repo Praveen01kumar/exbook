@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
+import { pageRoute } from 'src/app/shared/constant/route.const';
 import { ApiService } from 'src/app/shared/services/api-service';
 
 @Component({
@@ -30,7 +31,7 @@ export class CollectionComponent implements OnInit {
 
   GotoDetail(url: any) {
     const newurl = url?.name?.replace(/\s+/g, '-');
-    this.route.navigate(['books/' + newurl], { queryParams: { id: url?.id,} });
+    this.route.navigate([pageRoute?.books + '/' + newurl], { queryParams: { id: url?.id, } });
   }
 
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }

@@ -1,0 +1,35 @@
+<app-topheader></app-topheader>
+
+
+<div class="orders-page">
+    <div class="item-list">
+        <ng-container *ngFor="let item of ordersList;">
+            <div class="listing-item">
+                <div class="image">
+                    <img [src]="item?.image" [alt]="item?.name">
+                </div>
+                <div class="item-detial">
+                    <h1 class="name">{{item?.name}}</h1>
+                    <h2 class="seller">
+                        <span class="label">Seller:</span>
+                        <span class="name">{{item?.vendor}}</span>
+                    </h2>
+                    <h2 class="price-compare-price-prctg">
+                        <span class="price-compare">${{item?.price_compare}}</span>
+                        <span class="price">${{item?.price}}</span>
+                        <span class="prctg">{{prctg(item?.price_compare,item?.price)}}% Off</span>
+                    </h2>
+                </div>
+                <div class="delivery-detail">
+                    <div class="detail">
+                        <span class="date">Delivered on Thu Mar 14 |</span>
+                        <span class="chares">${{item?.delivery_fee}}</span>
+                        <span class="free">Free</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<app-footer></app-footer>

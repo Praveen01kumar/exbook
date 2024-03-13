@@ -1,5 +1,6 @@
 <app-topheader></app-topheader>
 
+
 <div class="checkout-page">
     <p-toast [breakpoints]="{'920px': {width: '90%', right: '0'}}"></p-toast>
     <div class="cheout-steps">
@@ -13,7 +14,7 @@
             </div>
         </div>
         <div class="steps">
-            <p-accordion [activeIndex]="1">
+            <p-accordion [multiple]="true" [activeIndex]="[0,1,2,3]">
                 <p-accordionTab [disabled]="false" header="Login or Signup">
                     <div class="log-form">
                         <div class="login-form">
@@ -21,9 +22,9 @@
                                 aria-describedby="username-help" />
                             <small id="username-help">
                                 By continuing, you agree to Exbook's
-                                <a href="#">Terms of Use</a>
+                                <a (click)="gotoRoute(pageRoute?.termsofuse)">Terms of Use</a>
                                 and
-                                <a href="#">Privacy Policy</a>
+                                <a (click)="gotoRoute(pageRoute?.privacypolicy)">Privacy Policy</a>
                             </small>
                         </div>
                         <div class="advantages">
@@ -43,21 +44,21 @@
                 <p-accordionTab [disabled]="false" header="Delivery Address">
                     <div class="address-list">
                         <div class="list-item" *ngFor="let address of addressList; let i=index;">
-                            <p-radioButton [name]="address" [value]="address" [(ngModel)]="ingredient"
-                                inputId="ingredient{{i+1}}"></p-radioButton>
-                            <label for="ingredient{{i+1}}">
+                            <p-radioButton [name]="address" [value]="address" [(ngModel)]="addressData"
+                                inputId="addressData{{i+1}}"></p-radioButton>
+                            <label for="addressData{{i+1}}">
                                 <div class="name-type-contact-edit">
                                     <div class="name-type-contact">
                                         <span class="name">{{address?.name}}</span>
                                         <span class="type">{{address?.type}}</span>
                                         <span class="contact">{{address?.contact}}</span>
                                     </div>
-                                    <div class="edit" *ngIf="ingredient==address">edit</div>
+                                    <div class="edit" *ngIf="addressData==address">edit</div>
                                 </div>
                                 <div class="address">
                                     <p>{{address?.address}}</p>
                                 </div>
-                                <div class="delever" *ngIf="ingredient==address">
+                                <div class="delever" *ngIf="addressData==address">
                                     <button>Deliver Here</button>
                                 </div>
                             </label>
@@ -68,19 +69,72 @@
                     </div>
                 </p-accordionTab>
                 <p-accordionTab [disabled]="false" header="Order Summary">
-                    <p>
-                        order Summery
-                    </p>
+                    <div class="item-list">
+                        <ng-container *ngFor="let item of order_summaryList;">
+                            <div class="listing-item">
+                                <div class="image">
+                                    <img [src]="item?.image" [alt]="item?.name">
+                                </div>
+                                <div class="item-detial">
+                                    <h1 class="name">{{item?.name}}</h1>
+                                    <h2 class="seller">
+                                        <span class="label">Seller:</span>
+                                        <span class="name">{{item?.vendor}}</span>
+                                    </h2>
+                                    <h2 class="price-compare-price-prctg">
+                                        <span class="price-compare">${{item?.price_compare}}</span>
+                                        <span class="price">${{item?.price}}</span>
+                                        <span class="prctg">{{prctg(item?.price_compare,item?.price)}}% Off</span>
+                                    </h2>
+                                    <div class="save-for-later-remove">
+                                        <button class="save-for-later">save for later</button>
+                                        <button class="remove" (click)="removeFromCart(item)">remove</button>
+                                    </div>
+                                </div>
+                                <div class="delivery-detail">
+                                    <div class="detail">
+                                        <span class="date">Delivery by Thu Mar 14 |</span>
+                                        <span class="chares">${{item?.delivery_fee}}</span>
+                                        <span class="free">Free</span>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="quantity-btns">
+                                            <button class="minus" (click)="quantity('-', item)"><i
+                                                    class="pi pi-minus"></i></button>
+                                            <p-inputNumber [(ngModel)]="item.quantity" [min]="1" [max]="100">
+                                            </p-inputNumber>
+                                            <button class="plus" (click)="quantity('+', item)"><i
+                                                    class="pi pi-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="input-btn">
+                        <button>CONTINUE</button>
+                    </div>
                 </p-accordionTab>
                 <p-accordionTab [disabled]="false" header="Payment Options">
-                    <p>
-                        Payment Options
-                    </p>
+                    <div class="payment-options">
+                        <div class="list-item" *ngFor="let payment of paymentList; let i=index;">
+                            <p-radioButton [name]="payment" [value]="payment" [(ngModel)]="paymentData"
+                                inputId="paymentData{{i+1}}"></p-radioButton>
+                            <label for="paymentData{{i+1}}">
+                                <div class="name-type">
+                                    <span class="name">{{payment?.name}}</span>
+                                </div>
+                                <div class="input-btn" *ngIf="paymentData==payment">
+                                    <button>CONTINUE</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                 </p-accordionTab>
             </p-accordion>
         </div>
     </div>
-    <div class="order-summery" *ngIf="islogedIn">
+    <div class="order-summery" *ngIf="!islogedIn">
         <div class="price-details">
             <h1 class="heading">PRICE DETAILS</h1>
             <h2 class="price">
@@ -108,7 +162,7 @@
         </div>
 
     </div>
-    <div class="safe-secure" *ngIf="!islogedIn">
+    <div class="safe-secure" *ngIf="islogedIn">
         <i class="pi pi-shield" style="color: green"></i>
         <span>Safe and Secure Payments. Easy returns. 100% Authentic products.</span>
     </div>

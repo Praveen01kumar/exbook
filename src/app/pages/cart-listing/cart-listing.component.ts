@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { pageRoute } from 'src/app/shared/constant/route.const';
 import { SharedService } from 'src/app/shared/services/shared-service';
 
 @Component({
@@ -8,9 +9,9 @@ import { SharedService } from 'src/app/shared/services/shared-service';
   templateUrl: './cart-listing.component.html',
   styleUrls: ['./cart-listing.component.scss'],
   providers: [MessageService]
-})
+}) 
 export class CartListingComponent implements OnInit {
-
+  pageRoute: any = pageRoute;
   constructor(
     private messageService: MessageService,
     public shardService: SharedService,
@@ -105,6 +106,7 @@ export class CartListingComponent implements OnInit {
 
   gotoRoute(url: string) {
     this.route.navigate([url]);
+    localStorage.setItem('order_summary', JSON.stringify(this.cartList));
   }
 
 }

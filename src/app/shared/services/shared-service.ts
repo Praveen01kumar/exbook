@@ -6,5 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
     public cartItem$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+    public order_summary$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 
 }

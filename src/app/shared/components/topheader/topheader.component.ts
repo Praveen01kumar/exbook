@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { SharedService } from '../../services/shared-service';
+import { collRoute, pageRoute } from '../../constant/route.const';
 
 @Component({
   selector: 'app-topheader',
@@ -9,19 +10,18 @@ import { SharedService } from '../../services/shared-service';
   styleUrls: ['./topheader.component.scss']
 })
 export class TopheaderComponent implements OnInit {
+  pageRoute: any = pageRoute;
   constructor(
     private router: Router,
     public sharedService: SharedService
   ) { }
   userMenuitems: MenuItem[] | undefined;
   settingMenuitems: MenuItem[] | undefined;
+  categoryMenuitems: MenuItem[] | undefined;
   cartitem: any[] = [];
   ngOnInit() {
     this.callOninit();
   }
-
-  update() { }
-  delete() { }
 
   gotoRoute(url: string) {
     this.router.navigate([url]);
@@ -34,37 +34,88 @@ export class TopheaderComponent implements OnInit {
           {
             label: 'Sign Up',
             icon: 'pi pi-user-plus',
-            command: () => { this.update(); }
+            command: () => { this.gotoRoute(pageRoute?.user_register); }
           },
           {
             label: 'Login',
             icon: 'pi pi-sign-in',
-            command: () => { this.delete(); }
+            command: () => { this.gotoRoute(pageRoute?.login); }
           },
           {
             label: 'My Profile',
             icon: 'pi pi-user',
-            command: () => { this.update(); }
+            command: () => { this.gotoRoute(pageRoute?.myprofile); }
           },
           {
             label: 'Orders',
             icon: 'pi pi-truck',
-            command: () => { this.delete(); }
+            command: () => { this.gotoRoute(pageRoute?.orders); }
           },
           {
             label: 'Rewards',
             icon: 'pi pi-inbox',
-            command: () => { this.delete(); }
+            command: () => { this.gotoRoute(pageRoute?.rewards); }
           },
           {
             label: 'Wishlist',
             icon: 'pi pi-list',
-            command: () => { this.update(); }
+            command: () => { this.gotoRoute(pageRoute?.wishlist); }
           },
           {
             label: 'Gift Cards',
             icon: 'pi pi-gift',
-            command: () => { this.delete(); }
+            command: () => { this.gotoRoute(pageRoute?.giftcards); }
+          }
+        ]
+      }
+    ];
+
+    this.categoryMenuitems = [
+      {
+        items: [
+          {
+            label: 'Collections',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.empty); }
+          },
+          {
+            label: 'Arts & Photography',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.arts_photography); }
+          },
+          {
+            label: 'Biographies Memoirs',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.biographies_memoirs); }
+          },
+          {
+            label: 'Childrens Books',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.childrens_books); }
+          },
+          {
+            label: 'Cook book',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.cookbook); }
+          },
+          {
+            label: 'Literature Fiction',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.literature_fiction); }
+          },
+          {
+            label: 'Mystery Suspense',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.mystery_suspense); }
+          },
+          {
+            label: 'Sci Fi Fantasy',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.sci_fi_fantasy); }
+          },
+          {
+            label: 'Current Bestsellers',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.current_bestsellers); }
+          },
+          {
+            label: 'Limited Time Offer',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.limited_time_offer); }
+          },
+          {
+            label: 'Top Rates Book',
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.top_rates_book); }
           }
         ]
       }
@@ -76,17 +127,17 @@ export class TopheaderComponent implements OnInit {
           {
             label: 'Become a Seller',
             icon: 'pi pi-briefcase',
-            command: () => { this.update(); }
+            command: () => { this.gotoRoute(pageRoute?.seller_register); }
           },
           {
             label: '24x7 Supports',
             icon: 'pi pi-phone',
-            command: () => { this.update(); }
+            command: () => { this.gotoRoute(pageRoute?.supports); }
           },
           {
             label: 'Advertise',
             icon: 'pi pi-chart-line',
-            command: () => { this.delete(); }
+            command: () => { this.gotoRoute(pageRoute?.advertise); }
           }
         ]
       }
