@@ -13,21 +13,25 @@ import { CollectionComponent } from './collection/collection.component';
 import { CurrentBestsellersComponent } from './current-bestsellers/current-bestsellers.component';
 import { LimitedTimeOfferComponent } from './limited-time-offer/limited-time-offer.component';
 import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component';
+import { CollectionLayoutComponent } from './collection-layout/collection-layout.component';
 
 const routes: Routes = [
     { path: collRoute.empty, component: CollectionsdashComponent },
-    { path: collRoute.arts_photography, component: ArtsPhotographyComponent },
-    { path: collRoute.biographies_memoirs, component: BiographiesMemoirsComponent },
-    { path: collRoute.childrens_books, component: ChildrensBooksComponent },
-    { path: collRoute.cookbook, component: CookbookComponent },
-    { path: collRoute.literature_fiction, component: LiteratureFictionComponent },
-    { path: collRoute.mystery_suspense, component: MysterySuspenseComponent },
-    { path: collRoute.sci_fi_fantasy, component: SciFiFantasyComponent },
-    { path: collRoute.current_bestsellers, component: CurrentBestsellersComponent },
-    { path: collRoute.limited_time_offer, component: LimitedTimeOfferComponent },
-    { path: collRoute.top_rates_book, component: TopRatesBookComponent },
-    { path: pageRoute.collection, component: CollectionComponent },
-
+    {
+        path: collRoute.lay_out, component: CollectionLayoutComponent,
+        children: [
+            { path: collRoute.arts_photography, component: ArtsPhotographyComponent },
+            { path: collRoute.biographies_memoirs, component: BiographiesMemoirsComponent },
+            { path: collRoute.childrens_books, component: ChildrensBooksComponent },
+            { path: collRoute.cookbook, component: CookbookComponent },
+            { path: collRoute.literature_fiction, component: LiteratureFictionComponent },
+            { path: collRoute.mystery_suspense, component: MysterySuspenseComponent },
+            { path: collRoute.sci_fi_fantasy, component: SciFiFantasyComponent },
+            { path: collRoute.current_bestsellers, component: CurrentBestsellersComponent },
+            { path: collRoute.limited_time_offer, component: LimitedTimeOfferComponent },
+            { path: collRoute.top_rates_book, component: TopRatesBookComponent },
+            { path: pageRoute.collection, component: CollectionComponent },]
+    },
 ];
 
 @NgModule({

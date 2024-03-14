@@ -34,4 +34,5 @@ export const collRoute = {
     current_bestsellers: 'current-bestsellers',
     limited_time_offer: 'limited-time-offer',
     top_rates_book: 'top-rates-book',
+    lay_out: 'v1',
 }

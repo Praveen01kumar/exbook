@@ -79,43 +79,43 @@ export class TopheaderComponent implements OnInit {
           },
           {
             label: 'Arts & Photography',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.arts_photography); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.arts_photography); }
           },
           {
             label: 'Biographies Memoirs',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.biographies_memoirs); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.biographies_memoirs); }
           },
           {
             label: 'Childrens Books',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.childrens_books); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.childrens_books); }
           },
           {
             label: 'Cook book',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.cookbook); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.cookbook); }
           },
           {
             label: 'Literature Fiction',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.literature_fiction); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.literature_fiction); }
           },
           {
             label: 'Mystery Suspense',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.mystery_suspense); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.mystery_suspense); }
           },
           {
             label: 'Sci Fi Fantasy',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.sci_fi_fantasy); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.sci_fi_fantasy); }
           },
           {
             label: 'Current Bestsellers',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.current_bestsellers); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.current_bestsellers); }
           },
           {
             label: 'Limited Time Offer',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.limited_time_offer); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.limited_time_offer); }
           },
           {
             label: 'Top Rates Book',
-            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.top_rates_book); }
+            command: () => { this.gotoRoute(pageRoute?.categories + '/' + collRoute?.lay_out + '/' + collRoute?.top_rates_book); }
           }
         ]
       }
@@ -150,6 +150,9 @@ export class TopheaderComponent implements OnInit {
         this.cartitem = cartItem ? JSON.parse(cartItem) : [];
       }
     });
+
+
+    console.log('hello from header');
 
   }
 

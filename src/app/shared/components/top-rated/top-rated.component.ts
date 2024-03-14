@@ -204,7 +204,7 @@ export class TopRatedComponent implements OnInit {
   prctg(op: number, sp: number) { return (op && sp) ? (((op - sp) / op) * 100).toFixed(2) : 0; }
  GotoDetail(url:string){
     const newurl = url.replace(/\s+/g, '-');
-    const newurl1 = 'categories/collection';
+    const newurl1 = 'categories/v1/collection';
     this.route.navigate([newurl1]);
   }
   

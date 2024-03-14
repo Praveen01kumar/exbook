@@ -38,101 +38,17 @@ body {
     background-color: #dcd0ff;
 }
 
-.wishlist-page,
-.admin-login-page,
-.advertise-page,
-.checkout-page,
-.gift-cards-page,
-.login-page,
-.my-profile-page,
-.notfound-page,
-.orders-page,
-.privacy-policy-page,
-.rewards-page,
-.seller-register-page,
-.supports-page,
-.termsof-use-page,
-.home-container,
-.cart-list-container,
-.categoriesdash-page,
-.arts-photography-page,
-.biographies-memoirs-page,
-.childrens-books-page,
-.cookbook-page,
-.literature-fiction-page,
-.mystery-suspense-page,
-.sci-fi-fantasy-page,
-.current-bestsellers-page,
-.limited-time-offer-page,
-.top-rates-book-page,
-.user-register-page {
+.exbook-layout-page,
+.collection-layout-page {
     margin-top: 80px;
     padding: 0px 1rem;
     width: 100%;
 }
 
-.detial-container {
-    margin: 70px 20px 8px 20px;
-    padding: 20px 1rem;
-
-}
-
-.book-listing {
-    margin-top: 72px;
-    padding: 4px 12px;
-}
-
 @media (min-width:0px) and (max-width:667px) {
 
-    .admin-login-page,
-    .advertise-page,
-    .gift-cards-page,
-    .login-page,
-    .my-profile-page,
-    .notfound-page,
-    .privacy-policy-page,
-    .rewards-page,
-    .seller-register-page,
-    .supports-page,
-    .termsof-use-page,
-    .categoriesdash-page,
-    .arts-photography-page,
-    .biographies-memoirs-page,
-    .childrens-books-page,
-    .cookbook-page,
-    .literature-fiction-page,
-    .mystery-suspense-page,
-    .sci-fi-fantasy-page,
-    .current-bestsellers-page,
-    .limited-time-offer-page,
-    .top-rates-book-page,
-    .user-register-page {
-        margin-top: 180px;
-    }
-
-    .checkout-page,
-    .orders-page {
-        margin-top: 200px;
-    }
-
-    .detial-container {
-        margin: 180px 8px 8px 8px;
-    }
-
-    .wishlist-page {
-        margin-top: 200px;
-    }
-
-    .home-container {
-        margin-top: 190px;
-    }
-
-    .book-listing {
-        margin-top: 180px;
-
-    }
-
-    .cart-list-container {
+    .exbook-layout-page,
+    .collection-layout-page {
         margin-top: 180px;
     }
 
