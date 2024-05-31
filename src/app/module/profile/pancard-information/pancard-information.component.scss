@@ -1,0 +1,96 @@
+.pan-card-information {
+    .header {
+        font-size: 16px;
+    }
+
+    .addnewpan-form {
+        .card-number {
+            input {
+                background: #ffffff;
+                border: 1px solid #ced4da;
+                transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                border-radius: 6px;
+                padding: 13px 12px;
+                outline: none;
+            }
+        }
+
+        .name {
+            margin-top: 16px;
+
+            input {
+                background: #ffffff;
+                border: 1px solid #ced4da;
+                transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                border-radius: 6px;
+                padding: 13px 12px;
+                outline: none;
+            }
+        }
+
+        .file {
+            margin-top: 16px;
+
+            .input {
+                width: min-content;
+                background: #ffffff;
+                border: 1px solid #ced4da;
+                transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                border-radius: 6px;
+                padding: 13px 12px;
+                outline: none;
+
+                .label {
+                    font-size: 10px;
+                    margin-bottom: 4px;
+                    color: #808080c4;
+                }
+            }
+        }
+
+        .accept-term {
+            margin-top: 16px;
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+
+            label {
+                font-size: 14px;
+                color: grey;
+            }
+
+        }
+
+        .submit-btn {
+            .upload {
+                padding: 8px 12px;
+                font-size: 14px;
+                text-transform: uppercase;
+                background: #1b8bcc;
+                color: #fff;
+                border: 1px solid #fff;
+                transition: all 0.35s ease 0s;
+
+                &:hover {
+                    background: #fff;
+                    color: #1b8bcc;
+                    border: 1px solid #1b8bcc;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .read-terms {
+        margin-top: 16px;
+        a {
+            padding: 3px 2px;
+            cursor: pointer;
+            color: #1b8bcc;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

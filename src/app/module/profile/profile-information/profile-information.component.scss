@@ -1,0 +1,151 @@
+.profile-information {
+    .personal {
+        @extend .header-field;
+    }
+
+    .personal-form {
+        @extend .dflex;
+
+        .first_name {
+            input {
+                @extend .input-field;
+            }
+        }
+
+        .last_name {
+            input {
+                @extend .input-field;
+            }
+        }
+
+        .submit-btn {
+            button {
+                @extend .sub-btn;
+            }
+        }
+    }
+
+    .gender {
+        @extend .header-field;
+    }
+
+    .gender-form {
+        @extend .dflex;
+
+        .gender-item {
+            display: flex;
+            align-items: center;
+
+            p-radioButton {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .email {
+        @extend .header-field;
+    }
+
+    .email-form {
+        @extend .dflex;
+
+        .email_address {
+            input {
+                @extend .input-field;
+            }
+        }
+
+        .submit-btn {
+            button {
+                @extend .sub-btn;
+            }
+        }
+    }
+
+    .phone {
+        @extend .header-field;
+    }
+
+    .phone-form {
+        @extend .dflex;
+
+        .phone_number {
+            input {
+                @extend .input-field;
+            }
+        }
+
+        .submit-btn {
+            button {
+                @extend .sub-btn;
+            }
+        }
+    }
+
+    .faqs {
+        h1 {
+            font-size: 20px;
+        }
+
+        .questions {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .answer {
+            font-size: 16px;
+        }
+    }
+}
+
+
+.input-field {
+    border: 1px solid #1b8bcc;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.header-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h1 {
+        font-size: 16px;
+    }
+
+    button {
+        background: #1b8bcc24;
+        border: none;
+        border-radius: 2px;
+        color: #1b8bcc;
+        cursor: pointer;
+    }
+}
+
+.sub-btn {
+    padding: 6px 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #fff;
+    color: #1b8bcc;
+    border: 1px solid #1b8bcc;
+    transition: all 0.35s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+        background: #1b8bcc;
+        color: #fff;
+    }
+}
+
+.dflex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.active{
+    background: rgba(33, 91, 255, 0.231372549) !important;
+}

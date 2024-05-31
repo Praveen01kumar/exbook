@@ -14,6 +14,7 @@ export class ApiService {
     ) {
         this.BASE_URL = environment.API_URL;
     }
+
     productsList(): Observable<any> {
         return this.http.get(`assets/json/products.json`).pipe(
             map((response: any) => {
@@ -25,5 +26,81 @@ export class ApiService {
         );
     }
 
+    registorUser(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/signup`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    loginUser(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    personalUpdate(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    emailUpdate(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    phoneUpdate(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    newAddress(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
+
+    panUpload(data: any = ''): Observable<any> {
+        return this.http.post(`${this.BASE_URL}/auth/login`, data).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((err: any) => {
+                return err;
+            })
+        );
+    }
 
 }

@@ -1,0 +1,303 @@
+<div class="manage-addresses">
+    <h1 class="header">Manage Addresses</h1>
+    <div class="addnew-address">
+        <button (click)="showAdd()"> <i class="pi pi-plus"></i> ADD A NEW ADDRESS</button>
+    </div>
+    <div class="addnew-address-box" *ngIf="showAdd_Address">
+        <div class="header">
+            <h1>ADD A NEW ADDRESS</h1>
+        </div>
+        <div class="mycurrent-location">
+            <button><i class="pi pi-map-marker"></i> Use my current location</button>
+        </div>
+        <form class="addnew-form" [formGroup]="newAddressForm" (ngSubmit)="onNewAddress()">
+            <div class="firt_last_name">
+                <div class="first_name">
+                    <input type="text" class="in-field" placeholder="Enter First Name" formControlName="first_name"
+                        [ngClass]="{ 'input-valid': (sub || f?.first_name?.touched) && f?.first_name?.valid, 
+                        'input-invalid': (sub || f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.first_name?.errors) || ((f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.required">First Name is required!</p>
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.minlength">Minimum 3 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.maxlength">Maximum 22 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.first_name?.errors?.numb">Number are not allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.first_name?.errors===null) || ((f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+                <div class="last_name">
+                    <input type="text" class="in-field" placeholder="Enter Last Name" formControlName="last_name"
+                        [ngClass]="{ 'input-valid': (sub || f?.last_name?.touched) && f?.last_name?.valid, 
+                        'input-invalid': (sub || f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.last_name?.errors) || ((f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.required">Last Name is required!</p>
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.minlength">Minimum 3 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.maxlength">Maximum 22 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.last_name?.errors?.numb">Number are not allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.last_name?.errors===null) || ((f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+            </div>
+            <div class="phone-pin">
+                <div class="phone-number">
+                    <input type="text" class="in-field" placeholder="Enter Phone Number" formControlName="phone_number"
+                        [ngClass]="{ 'input-valid': (sub || f?.phone_number?.touched) && f?.phone_number?.valid, 
+                        'input-invalid': (sub || f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.phone_number?.errors) || ((f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.required">Phone Number is required!</p>
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.minlength">Minimum 10 digits are
+                            required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.maxlength">Maximum 12 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.phone_number?.errors?.notNum">Only Number are allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.phone_number?.errors===null) || ((f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+                <div class="pin-code">
+                    <input type="text" class="in-field" placeholder="Enter Pin Code" formControlName="pin_code"
+                        [ngClass]="{ 'input-valid': (sub || f?.pin_code?.touched) && f?.pin_code?.valid, 
+                        'input-invalid': (sub || f?.pin_code?.touched || f?.pin_code?.dirty) && f?.pin_code?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.pin_code?.errors) || ((f?.pin_code?.touched || f?.pin_code?.dirty) && f?.pin_code?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.required">Pin Code is required!</p>
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.minlength">Minimum 5 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.maxlength">Maximum 6 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.pin_code?.errors?.notNum">Only Number are allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.pin_code?.errors===null) || ((f?.pin_code?.touched || f?.pin_code?.dirty) && f?.pin_code?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+            </div>
+            <div class="area-street">
+                <textarea class="in-field" rows="4" cols="50" placeholder="Enter (area and street)"
+                    formControlName="area_street"
+                    [ngClass]="{ 'input-valid': (sub || f?.area_street?.touched) && f?.area_street?.valid, 
+                        'input-invalid': (sub || f?.area_street?.touched || f?.area_street?.dirty) && f?.area_street?.errors }"
+                    autocomplete="off"></textarea>
+                <span
+                    *ngIf="(sub && f?.area_street?.errors) || ((f?.area_street?.touched || f?.area_street?.dirty) && f?.area_street?.errors)"
+                    class="text-danger">
+                    <p class="mp-zero" *ngIf="f?.area_street?.errors?.required">Area and street is required!</p>
+                </span>
+                <span
+                    *ngIf="(sub && f?.area_street?.errors===null) || ((f?.area_street?.touched || f?.area_street?.dirty) && f?.area_street?.errors===null)"
+                    class="text-success">
+                    <p class="mp-zero">Good to go!</p>
+                </span>
+            </div>
+            <div class="location-city">
+                <div class="location">
+                    <input type="text" class="in-field" placeholder="Enter Location" formControlName="location"
+                        [ngClass]="{ 'input-valid': (sub || f?.location?.touched) && f?.location?.valid, 
+                        'input-invalid': (sub || f?.location?.touched || f?.location?.dirty) && f?.location?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.location?.errors) || ((f?.location?.touched || f?.location?.dirty) && f?.location?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.location?.errors?.required">Location is required!</p>
+                        <p class="mp-zero" *ngIf="f?.location?.errors?.minlength">Minimum 3 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.location?.errors?.maxlength">Maximum 22 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.location?.errors?.numb">Number are not allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.location?.errors===null) || ((f?.location?.touched || f?.location?.dirty) && f?.location?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+                <div class="city">
+                    <input type="text" class="in-field" placeholder="Enter City" formControlName="city" [ngClass]="{ 'input-valid': (sub || f?.city?.touched) && f?.city?.valid, 
+                        'input-invalid': (sub || f?.city?.touched || f?.city?.dirty) && f?.city?.errors }"
+                        autocomplete="off">
+                    <span *ngIf="(sub && f?.city?.errors) || ((f?.city?.touched || f?.city?.dirty) && f?.city?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.city?.errors?.required">City is required!</p>
+                        <p class="mp-zero" *ngIf="f?.city?.errors?.minlength">Minimum 3 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.city?.errors?.maxlength">Maximum 52 digits are allowed!
+                        </p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.city?.errors===null) || ((f?.city?.touched || f?.city?.dirty) && f?.city?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+            </div>
+            <div class="state">
+                <p-dropdown formControlName="state" [ngClass]="{ 'input-valid': (sub || f?.state?.touched) && f?.state?.valid, 
+                'input-invalid': (sub || f?.state?.touched || f?.state?.dirty) && f?.state?.errors }"
+                    [options]="states" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true"
+                    placeholder="Select a State">
+                    <ng-template pTemplate="selectedItem" let-selectedOption>
+                        <div class="flex align-items-center gap-2">
+                            <div>{{ selectedOption?.name }}</div>
+                        </div>
+                    </ng-template>
+                    <ng-template let-country pTemplate="item">
+                        <div class="flex align-items-center gap-2">
+                            <div>{{ country?.name }}</div>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
+                <span *ngIf="(sub && f?.state?.errors) || ((f?.state?.touched || f?.state?.dirty) && f?.state?.errors)"
+                    class="text-danger">
+                    <p class="mp-zero" *ngIf="f?.state?.errors?.required">state is required!</p>
+                </span>
+                <span
+                    *ngIf="(sub && f?.state?.errors===null) || ((f?.state?.touched || f?.state?.dirty) && f?.state?.errors===null)"
+                    class="text-success">
+                    <p class="mp-zero">Good to go!</p>
+                </span>
+            </div>
+            <div class="landmark-alternate_phone">
+                <div class="landmark">
+                    <input type="text" class="in-field" placeholder="Enter Landmark(Optional)"
+                        formControlName="landmark" [ngClass]="{ 'input-valid': (sub || f?.landmark?.touched) && f?.landmark?.valid, 
+                    'input-invalid': (sub || f?.landmark?.touched || f?.landmark?.dirty) && f?.landmark?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.landmark?.errors) || ((f?.landmark?.touched || f?.landmark?.dirty) && f?.landmark?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.required">Landmark is required!</p>
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.minlength">Minimum 3 digits are required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.maxlength">Maximum 22 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.landmark?.errors?.numb">Number are not allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.landmark?.errors===null) || ((f?.landmark?.touched || f?.landmark?.dirty) && f?.landmark?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+                <div class="alternate_phone">
+                    <input type="text" class="in-field" placeholder="Enter Alternate Phone(Optional)"
+                        formControlName="alternate_phone"
+                        [ngClass]="{ 'input-valid': (sub || f?.alternate_phone?.touched) && f?.alternate_phone?.valid, 
+                    'input-invalid': (sub || f?.alternate_phone?.touched || f?.alternate_phone?.dirty) && f?.alternate_phone?.errors }"
+                        autocomplete="off">
+                    <span
+                        *ngIf="(sub && f?.alternate_phone?.errors) || ((f?.alternate_phone?.touched || f?.alternate_phone?.dirty) && f?.alternate_phone?.errors)"
+                        class="text-danger">
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.required">Alternate Phone Number is
+                            required!</p>
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.minlength">Minimum 10 digits are
+                            required!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.maxlength">Maximum 12 digits are allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.speChar">Special Characters are not
+                            allowed!
+                        </p>
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.space">Space are not allowed!</p>
+                        <p class="mp-zero" *ngIf="f?.alternate_phone?.errors?.notNum">Only Number are allowed!</p>
+                    </span>
+                    <span
+                        *ngIf="(sub && f?.alternate_phone?.errors===null) || ((f?.alternate_phone?.touched || f?.alternate_phone?.dirty) && f?.alternate_phone?.errors===null)"
+                        class="text-success">
+                        <p class="mp-zero">Good to go!</p>
+                    </span>
+                </div>
+            </div>
+            <div class="type-form">
+                <div class="type-item">
+                    <p-radioButton name="add_type" value="Home" formControlName="add_type"
+                        inputId="add_type1"></p-radioButton>
+                    <label for="add_type1" class="ml-2">Home</label>
+                </div>
+                <div class="type-item">
+                    <p-radioButton name="add_type" value="Work" formControlName="add_type"
+                        inputId="add_type2"></p-radioButton>
+                    <label for="add_type2" class="ml-2">Work</label>
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button (click)="onNewAddress()" class="save">Save</button>
+                <button (click)="showAdd()" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="address-list">
+        <p-toast></p-toast>
+        <div class="list-item" *ngFor="let address of addressList;let i = index;">
+            <div class="type">
+                <span class="name">{{address?.add_type}}</span>
+                <p-menu #addressMenu [model]="addressMenuitem" [popup]="true"></p-menu>
+                <span class="action" (click)="toggleAddressMenu($event, i)">
+                    <i class="pi pi-ellipsis-v"></i>
+                </span>
+            </div>
+            <div class="name-contact">
+                <span class="name">{{address?.first_name}} {{address?.last_name}}</span>
+                <span class="contact">{{address?.phone_number}}</span>
+            </div>
+            <div class="address">
+                <span class="ads">{{address?.location}}, </span>
+                <span class="ads">{{address?.area_street}}, </span>
+                <span class="ads">{{address?.city}}, </span>
+                <span class="ads">{{address?.state?.name}}, </span>
+                <span class="ads" *ngIf="address?.landmark!=''&&address?.landmark!=null">{{address?.landmark}}, </span>
+                <span class="ads"
+                    *ngIf="address?.alternate_phone!=''&&address?.alternate_phone!=null">{{address?.alternate_phone}}
+                </span>
+                <span class="pin">- {{address?.pin_code}}</span>
+            </div>
+        </div>
+    </div>
+</div>

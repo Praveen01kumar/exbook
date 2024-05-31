@@ -14,8 +14,6 @@ export const pageRoute = {
     wishlist: 'wishlist',
     termsofuse: 'terms-of-use',
     privacypolicy: 'privacy-policy',
-    giftcards: 'gift-cards',
-    rewards: 'rewards',
     myprofile: 'my-profile',
     supports: 'supports',
     advertise: 'advertise',
@@ -25,6 +23,7 @@ export const pageRoute = {
 export const collRoute = {
     empty: '',
     arts_photography: 'arts-photography',
+    all: 'all',
     biographies_memoirs: 'biographies-memoirs',
     childrens_books: 'childrens-books',
     cookbook: 'cookbook',
@@ -35,4 +34,19 @@ export const collRoute = {
     limited_time_offer: 'limited-time-offer',
     top_rates_book: 'top-rates-book',
     lay_out: 'v1',
+}
+
+export const propRoute = {
+    empty: '',
+    account: 'account',
+    giftcards: 'gift-cards',
+    manageaddresses: 'manage-addresses',
+    mycoupons: 'my-coupons',
+    myreviewsratings: 'my-reviews-ratings',
+    notifications: 'notifications',
+    pancardinformation: 'pan-card-information',
+    savedupi: 'saved-upi',
+    savedcards: 'saved-cards',
+    wishlist: 'wishlist',
+    order: 'orders',
 }

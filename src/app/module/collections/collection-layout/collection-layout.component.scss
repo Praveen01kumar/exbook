@@ -1,1 +1,102 @@
-.collection-layout-page {}
+.collection-layout-page {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all 0.3s ease-in-out;
+    gap: 12px;
+
+    .side-bar {
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1019607843);
+        padding: 20px 8px;
+        border-radius: 8px;
+        width: 250px;
+        transition: all 0.3s ease-in-out;
+
+        ul {
+            list-style: none;
+            padding: 0px;
+
+            li {
+                margin-bottom: 4px;
+                background: rgba(33, 91, 255, 0.1019607843);
+                padding: 8px;
+                border-radius: 4px;
+
+                &:hover {
+                    background: rgba(33, 91, 255, 0.231372549);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .list-data {
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1019607843);
+        padding: 8px;
+        border-radius: 8px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+
+        .product-list {
+            padding: 8px;
+            border-radius: 8px;
+            background-color: #ededed;
+        }
+
+        .side-toggale {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: #1b8bcc;
+            background-color: inherit;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.1607843137);
+            border: none;
+            border-radius: 50%;
+            padding: 8px 8px 4px 10px;
+            z-index: 1;
+            cursor: pointer;
+
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+@media (min-width:0px) and (max-width:730px) {
+    .collection-layout-page {
+        position: relative;
+
+        .side-bar {
+            padding: 26px 8px;
+        }
+    }
+
+    .sidebar-hiden {
+        display: block !important;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .sidebar-show {
+        display: none !important;
+        position: absolute;
+        z-index: 1;
+    }
+
+}
+
+.sidebar-hiden {
+    display: none;
+}
+
+.sidebar-show {
+    display: block;
+}
+
+.active {
+    background-color: rgba(33, 91, 255, 0.231372549) !important;
+}

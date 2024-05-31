@@ -11,7 +11,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 8px 1% 4px 1%;
+        padding: 4px 1% 4px 1%;
         border-bottom: 1px solid #00000017;
 
         .logo {
@@ -21,18 +21,18 @@
             width: 33%;
 
             img {
-                width: 48px;
-                height: 28px;
-                margin-right: 6px;
+                width: auto;
+                height: 46px;
+                // margin-right: 6px;
                 cursor: pointer;
             }
 
-            span {
-                font-size: 30px;
-                font-weight: 600;
-                line-height: 35px;
-                cursor: pointer;
-            }
+            // span {
+            //     font-size: 30px;
+            //     font-weight: 600;
+            //     line-height: 35px;
+            //     cursor: pointer;
+            // }
         }
 
         .header {

@@ -21,8 +21,8 @@ export class CheckoutComponent implements OnInit {
   addressData: any;
   paymentData: any;
   addressList: any[] = [
-    { name: "Praveen Kumar", type: "HOME", contact: "9128342132", address: "NS Cosmatric, Shop No 4, Madanpur, Phase 2, Sector 54, Sahibzada Ajit Singh Nagar, Punjab 160055., Madanpur chowk, Chandigarh, Chandigarh" },
-    { name: "Praveen Kumar", type: "WORK", contact: "9128342132", address: "Quark Atrium, A-45, (Anviam Solution pvt.), Quark Atrium, A-45, Industrial Area Phase VIII-B, Mohali, Punjab, India 160071, Mohali, Punjab" },
+    { name: "Abhishek Gupta", type: "HOME", contact: "9128342132", address: "NS Cosmatric, Shop No 4, Madanpur, Phase 2, Sector 54, Sahibzada Ajit Singh Nagar, Punjab 160055., Madanpur chowk, Chandigarh, Chandigarh" },
+    { name: "Abhishek Gupta", type: "WORK", contact: "9128342132", address: "Quark Atrium, A-45, (Anviam Solution pvt.), Quark Atrium, A-45, Industrial Area Phase VIII-B, Mohali, Punjab, India 160071, Mohali, Punjab" },
   ];
   paymentList: any[] = [
     { name: "Google Pay UPI", contact: "9128342132" },
@@ -121,8 +121,12 @@ export class CheckoutComponent implements OnInit {
     this.will_save = will_save;
   }
 
-  gotoRoute(url: string) {
-    this.route.navigate([url]);
+  gotoRoute(url: string, value: string) {
+    if (value === 'term_policy') {
+      window.open(url, '_blank');
+    } else {
+      this.route.navigate([url]);
+    }
   }
 
 }

@@ -52,20 +52,10 @@ export class TopheaderComponent implements OnInit {
             command: () => { this.gotoRoute(pageRoute?.orders); }
           },
           {
-            label: 'Rewards',
-            icon: 'pi pi-inbox',
-            command: () => { this.gotoRoute(pageRoute?.rewards); }
-          },
-          {
             label: 'Wishlist',
             icon: 'pi pi-list',
             command: () => { this.gotoRoute(pageRoute?.wishlist); }
           },
-          {
-            label: 'Gift Cards',
-            icon: 'pi pi-gift',
-            command: () => { this.gotoRoute(pageRoute?.giftcards); }
-          }
         ]
       }
     ];

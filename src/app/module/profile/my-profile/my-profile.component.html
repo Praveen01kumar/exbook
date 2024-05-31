@@ -1,0 +1,56 @@
+<div class="my-profile-page">
+    <div class="profile-side">
+        <div class="profile-icon-name">
+            <div class="icon">
+                <img src="assets/auth/profile.jpg" alt="profile">
+            </div>
+            <div class="name">
+                <p>hello,</p>
+                <h1>Abhishek Gupta</h1>
+            </div>
+        </div>
+        <div class="side-item">
+            <div class="item-head">
+                <h1 routerLinkActive="active" [routerLink]="propRoute?.order"><i class="pi pi-truck"></i> MY ORDERS</h1>
+            </div>
+            <div class="item-head">
+                <h1><i class="pi pi-user"></i> ACCOUNT SETTINGS</h1>
+            </div>
+            <div class="item-sub">
+                <ul>
+                    <li routerLinkActive="active" (click)="gotoRoute(pageRoute?.myprofile)">Profile Information</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.manageaddresses">Manage Addresses</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.pancardinformation">PAN Card Information</li>
+                </ul>
+            </div>
+            <div class="item-head">
+                <h1> <i class="pi pi-wallet"></i> PAYMENTS</h1>
+            </div>
+            <div class="item-sub">
+                <ul>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.giftcards">Gift Cards</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.savedupi">Saved UPI</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.savedcards">Saved Cards</li>
+                </ul>
+            </div>
+            <div class="item-head">
+                <h1> <i class="pi pi-folder-open"></i> MY STUFF</h1>
+            </div>
+            <div class="item-sub">
+                <ul>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.mycoupons">My Coupons</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.myreviewsratings">My Reviews & Ratings</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.notifications">All Notifications</li>
+                    <li routerLinkActive="active" [routerLink]="propRoute?.wishlist">My Wishlist</li>
+                </ul>
+            </div>
+        </div>
+        <div class="logout">
+            <i class="pi pi-power-off"></i>
+            <span>logout</span>
+        </div>
+    </div>
+    <div class="profile-detail">
+        <router-outlet></router-outlet>
+    </div>
+</div>

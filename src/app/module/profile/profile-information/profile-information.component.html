@@ -1,0 +1,134 @@
+<div class="profile-information">
+    <div class="personal">
+        <h1>Personal Information</h1>
+        <button>
+            <span *ngIf="!Personaledit" (click)="Personaledit = !Personaledit">edit</span>
+            <span *ngIf="Personaledit" (click)="Personaledit = !Personaledit">canel</span>
+        </button>
+    </div>
+    <form class="personal-form" [formGroup]="PersonalForm" (ngSubmit)="onPersonal()">
+        <div class="first_name">
+            <input type="text" placeholder="Enter First Name" formControlName="first_name" [ngClass]="{ 'input-valid': (sub || f?.first_name?.touched) && f?.first_name?.valid, 
+        'input-invalid': (sub || f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors }"
+                autocomplete="off">
+            <span
+                *ngIf="(sub && f?.first_name?.errors) || ((f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.required">First Name is required!</p>
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.minlength">Minimum 3 digits are required!</p>
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.maxlength">Maximum 22 digits are allowed!</p>
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.speChar">Special Characters are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.space">Space are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.first_name?.errors?.numb">Number are not allowed!</p>
+            </span>
+            <span
+                *ngIf="(sub && f?.first_name?.errors===null) || ((f?.first_name?.touched || f?.first_name?.dirty) && f?.first_name?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="last_name">
+            <input type="text" placeholder="Enter Last Name" formControlName="last_name" [ngClass]="{ 'input-valid': (sub || f?.last_name?.touched) && f?.last_name?.valid, 
+        'input-invalid': (sub || f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors }"
+                autocomplete="off">
+            <span
+                *ngIf="(sub && f?.last_name?.errors) || ((f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.required">Last Name is required!</p>
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.minlength">Minimum 3 digits are required!</p>
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.maxlength">Maximum 22 digits are allowed!</p>
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.speChar">Special Characters are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.space">Space are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.last_name?.errors?.numb">Number are not allowed!</p>
+            </span>
+            <span
+                *ngIf="(sub && f?.last_name?.errors===null) || ((f?.last_name?.touched || f?.last_name?.dirty) && f?.last_name?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="submit-btn" *ngIf="Personaledit">
+            <button (click)="onPersonal()">Save</button>
+        </div>
+    </form>
+    <div class="gender">
+        <h1>Your Gender</h1>
+    </div>
+    <div class="gender-form">
+        <div class="gender-item">
+            <p-radioButton name="gender" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
+            <label for="gender1" class="ml-2">Male</label>
+        </div>
+        <div class="gender-item">
+            <p-radioButton name="gender" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
+            <label for="gender2" class="ml-2">Female</label>
+        </div>
+    </div>
+    <div class="email">
+        <h1>Email Address</h1>
+        <button>
+            <span *ngIf="!Emailedit" (click)="Emailedit = !Emailedit">edit</span>
+            <span *ngIf="Emailedit" (click)="Emailedit = !Emailedit">canel</span>
+        </button>
+    </div>
+    <form class="email-form" [formGroup]="EmailForm" (ngSubmit)="onEmail()">
+        <div class="email_address">
+            <input type="text" placeholder="Enter Email Address" formControlName="email_address"
+                [ngClass]="{ 'input-valid': (sub1 || f1?.email_address?.touched) && f1?.email_address?.valid, 
+        'input-invalid': (sub1 || f1?.email_address?.touched || f1?.email_address?.dirty) && f1?.email_address?.errors }" autocomplete="off">
+            <span
+                *ngIf="(sub1 && f1?.email_address?.errors) || ((f1?.email_address?.touched || f1?.email_address?.dirty) && f1?.email_address?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f1?.email_address?.errors?.required">Email Address is required!</p>
+                <p class="mp-zero" *ngIf="f1?.email_address?.errors?.invalidEmail">Invalid Email!</p>
+            </span>
+            <span
+                *ngIf="(sub1 && f1?.email_address?.errors===null) || ((f1?.email_address?.touched || f1?.email_address?.dirty) && f1?.email_address?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="submit-btn" *ngIf="Emailedit">
+            <button (click)="onEmail()">Save</button>
+        </div>
+    </form>
+    <div class="phone">
+        <h1>Mobile Number</h1>
+        <button>
+            <span *ngIf="!Phoneedit" (click)="Phoneedit = !Phoneedit">edit</span>
+            <span *ngIf="Phoneedit" (click)="Phoneedit = !Phoneedit">canel</span>
+        </button>
+    </div>
+    <form class="phone-form" [formGroup]="PhoneForm" (ngSubmit)="onPhone()">
+        <div class="phone_number">
+            <input type="text" placeholder="Enter Phone Number" formControlName="phone_number" [ngClass]="{ 'input-valid': (sub2 || f2?.phone_number?.touched) && f2?.phone_number?.valid, 
+        'input-invalid': (sub2 || f2?.phone_number?.touched || f2?.phone_number?.dirty) && f2?.phone_number?.errors }"
+                autocomplete="off">
+            <span
+                *ngIf="(sub2 && f2?.phone_number?.errors) || ((f2?.phone_number?.touched || f2?.phone_number?.dirty) && f2?.phone_number?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f2?.phone_number?.errors?.required">Email Address is required!</p>
+                <p class="mp-zero" *ngIf="f2?.phone_number?.errors?.invalidEmail">Invalid Email!</p>
+            </span>
+            <span
+                *ngIf="(sub2 && f2?.phone_number?.errors===null) || ((f2?.phone_number?.touched || f2?.phone_number?.dirty) && f2?.phone_number?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="submit-btn" *ngIf="Phoneedit">
+            <button (click)="onPhone()">Save</button>
+        </div>
+    </form>
+    <div class="faqs">
+        <h1>FAQs</h1>
+        <p class="questions">What happens when I update my email address (or mobile number)?</p>
+        <p class="answer">Your login email id (or mobile number) changes, likewise. You'll receive all your account related communication on your updated email address (or mobile number).</p>
+        <p class="questions">When will my Exbook account be updated with the new email address (or mobile number)?</p>
+        <p class="answer">It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes.</p>
+        <p class="questions">What happens to my existing Exbook account when I update my email address (or mobile number)?</p>
+        <p class="answer">Updating your email address (or mobile number) doesn't invalidate your account. Your account remains fully functional. You'll continue seeing your Order history, saved information and personal details.</p>
+        <p class="questions">Does my Seller account get affected when I update my email address?</p>
+        <p class="answer">Exbook has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
+    </div>
+</div>

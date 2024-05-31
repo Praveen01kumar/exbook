@@ -1,3 +1,55 @@
 <div class="login-page">
-    <p>login works!</p>
+    <div class="detail-login">
+        <div class="detail">
+            <div class="heading">
+                <h1>Login</h1>
+                <h2>Get access to your Orders, Wishlist and Recommendations</h2>
+            </div>
+            <div class="image">
+                <img src="assets/auth/register.png" alt="login">
+            </div>
+        </div>
+        <div class="login">
+            <div class="form-field">
+                <form class="login-form" [formGroup]="LoginForm" (ngSubmit)="onLogin()">
+                    <div class="email_or_phone_number">
+                        <input type="text" placeholder="Enter Email or Phone Number"
+                            formControlName="email_or_phone_number"
+                            [ngClass]="{ 'input-valid': (sub || f?.email_or_phone_number?.touched) && f?.email_or_phone_number?.valid, 
+                    'input-invalid': (sub || f?.email_or_phone_number?.touched || f?.email_or_phone_number?.dirty) && f?.email_or_phone_number?.errors }"
+                            autocomplete="off">
+                        <span
+                            *ngIf="(sub && f?.email_or_phone_number?.errors) || ((f?.email_or_phone_number?.touched || f?.email_or_phone_number?.dirty) && f?.email_or_phone_number?.errors)"
+                            class="text-danger">
+                            <p class="mp-zero" *ngIf="f?.email_or_phone_number?.errors?.required">Email or Phone number
+                                is required!</p>
+                            <p class="mp-zero" *ngIf="f?.email_or_phone_number?.errors?.minlength">Minimum 6 digits are
+                                required!</p>
+                            <p class="mp-zero" *ngIf="f?.email_or_phone_number?.errors?.maxlength">Maximum 22 digits are
+                                allowed!</p>
+                        </span>
+                        <span
+                            *ngIf="(sub && f?.email_or_phone_number?.errors===null) || ((f?.email_or_phone_number?.touched || f?.email_or_phone_number?.dirty) && f?.email_or_phone_number?.errors===null)"
+                            class="text-success">
+                            <p class="mp-zero">Good to go!</p>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="continuing">
+                <span>
+                    By continuing, you agree to Exbook's
+                    <a (click)="gotoRoute(pageRoute?.termsofuse, 'term_policy')">Terms of Use</a>
+                    and
+                    <a (click)="gotoRoute(pageRoute?.privacypolicy, 'term_policy')">Privacy Policy</a>
+                </span>
+            </div>
+            <div class="continue-btn">
+                <button>Request OTP</button>
+            </div>
+            <div class="existing-user-btn">
+                <button (click)="gotoRoute(pageRoute?.user_register, 'account')">Don't have an account? Sign up</button>
+            </div>
+        </div>
+    </div>
 </div>

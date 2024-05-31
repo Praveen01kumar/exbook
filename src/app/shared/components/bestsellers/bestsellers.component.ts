@@ -204,7 +204,7 @@ export class BestsellersComponent implements OnInit {
 
   GotoDetail(url: string) {
     const newurl = url.replace(/\s+/g, '-');
-    const newurl1 = 'categories/v1/collection';
+    const newurl1 = 'collection';
     this.route.navigate([newurl1]);
   }
 

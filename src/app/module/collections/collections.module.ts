@@ -16,9 +16,11 @@ import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PaginatorModule } from 'primeng/paginator';
 import { CollectionLayoutComponent } from './collection-layout/collection-layout.component';
+import { AllCategoryComponent } from './all-category/all-category.component';
 
 @NgModule({
   declarations: [
+    AllCategoryComponent,
     CollectionsdashComponent,
     ArtsPhotographyComponent,
     BiographiesMemoirsComponent,
@@ -31,7 +33,7 @@ import { CollectionLayoutComponent } from './collection-layout/collection-layout
     CurrentBestsellersComponent,
     LimitedTimeOfferComponent,
     TopRatesBookComponent,
-    CollectionLayoutComponent
+    CollectionLayoutComponent,
   ],
   imports: [
     CommonModule,

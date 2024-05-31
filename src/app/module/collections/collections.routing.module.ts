@@ -9,17 +9,18 @@ import { CookbookComponent } from './cookbook/cookbook.component';
 import { LiteratureFictionComponent } from './literature-fiction/literature-fiction.component';
 import { MysterySuspenseComponent } from './mystery-suspense/mystery-suspense.component';
 import { SciFiFantasyComponent } from './sci-fi-fantasy/sci-fi-fantasy.component';
-import { CollectionComponent } from './collection/collection.component';
 import { CurrentBestsellersComponent } from './current-bestsellers/current-bestsellers.component';
 import { LimitedTimeOfferComponent } from './limited-time-offer/limited-time-offer.component';
 import { TopRatesBookComponent } from './top-rates-book/top-rates-book.component';
 import { CollectionLayoutComponent } from './collection-layout/collection-layout.component';
+import { AllCategoryComponent } from './all-category/all-category.component';
 
 const routes: Routes = [
     { path: collRoute.empty, component: CollectionsdashComponent },
     {
         path: collRoute.lay_out, component: CollectionLayoutComponent,
         children: [
+            { path: collRoute.all, component: AllCategoryComponent },
             { path: collRoute.arts_photography, component: ArtsPhotographyComponent },
             { path: collRoute.biographies_memoirs, component: BiographiesMemoirsComponent },
             { path: collRoute.childrens_books, component: ChildrensBooksComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
             { path: collRoute.current_bestsellers, component: CurrentBestsellersComponent },
             { path: collRoute.limited_time_offer, component: LimitedTimeOfferComponent },
             { path: collRoute.top_rates_book, component: TopRatesBookComponent },
-            { path: pageRoute.collection, component: CollectionComponent },]
+        ]
     },
 ];
 

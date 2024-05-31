@@ -1,0 +1,78 @@
+<div class="pan-card-information">
+    <h1 class="header">PAN Card Information</h1>
+
+    <form class="addnewpan-form" [formGroup]="newPanForm" (ngSubmit)="onNewPan()">
+        <div class="card-number">
+            <input type="text" class="in-field" placeholder="Enter Card Number" formControlName="card_number"
+                [ngClass]="{ 'input-valid': (sub || f?.card_number?.touched) && f?.card_number?.valid, 
+                    'input-invalid': (sub || f?.card_number?.touched || f?.card_number?.dirty) && f?.card_number?.errors }" autocomplete="off">
+            <span
+                *ngIf="(sub && f?.card_number?.errors) || ((f?.card_number?.touched || f?.card_number?.dirty) && f?.card_number?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.required">Card Number is required!</p>
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.minlength">Minimum 12 digits are required!</p>
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.maxlength">Maximum 16 digits are allowed!</p>
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.speChar">Special Characters are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.space">Space are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.card_number?.errors?.notNum">Only Number are allowed!</p>
+            </span>
+            <span
+                *ngIf="(sub && f?.card_number?.errors===null) || ((f?.card_number?.touched || f?.card_number?.dirty) && f?.card_number?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="name">
+            <input type="text" class="in-field" placeholder="Enter Full Name" formControlName="name" [ngClass]="{ 'input-valid': (sub || f?.name?.touched) && f?.name?.valid, 
+                    'input-invalid': (sub || f?.name?.touched || f?.name?.dirty) && f?.name?.errors }"
+                autocomplete="off">
+            <span *ngIf="(sub && f?.name?.errors) || ((f?.name?.touched || f?.name?.dirty) && f?.name?.errors)"
+                class="text-danger">
+                <p class="mp-zero" *ngIf="f?.name?.errors?.required">Full Name is required!</p>
+                <p class="mp-zero" *ngIf="f?.name?.errors?.minlength">Minimum 3 digits are required!</p>
+                <p class="mp-zero" *ngIf="f?.name?.errors?.maxlength">Maximum 22 digits are allowed!</p>
+                <p class="mp-zero" *ngIf="f?.name?.errors?.speChar">Special Characters are not allowed!</p>
+                <p class="mp-zero" *ngIf="f?.name?.errors?.numb">Number are not allowed!</p>
+            </span>
+            <span
+                *ngIf="(sub && f?.name?.errors===null) || ((f?.name?.touched || f?.name?.dirty) && f?.name?.errors===null)"
+                class="text-success">
+                <p class="mp-zero">Good to go!</p>
+            </span>
+        </div>
+        <div class="file">
+            <div class="input">
+                <div class="label">Upload PAN Card (Only JPEG, PNG and JPG file are allowed)</div>
+                <input type="file" class="in-field" formControlName="card_picture" accept=".png, .jpg, .jpeg"
+                    [ngClass]="{ 'input-valid': (sub || f?.card_picture?.touched) && f?.card_picture?.valid, 
+                    'input-invalid': (sub || f?.card_picture?.touched || f?.card_picture?.dirty) && f?.card_picture?.errors }">
+                <span
+                    *ngIf="(sub && f?.card_picture?.errors) || ((f?.card_picture?.touched || f?.card_picture?.dirty) && f?.card_picture?.errors)"
+                    class="text-danger">
+                    <p class="mp-zero" *ngIf="f?.card_picture?.errors?.required">Card Picture is required!</p>
+                </span>
+                <span
+                    *ngIf="(sub && f?.card_picture?.errors===null) || ((f?.card_picture?.touched || f?.card_picture?.dirty) && f?.card_picture?.errors===null)"
+                    class="text-success">
+                    <p class="mp-zero">Good to go!</p>
+                </span>
+            </div>
+        </div>
+        <div class="accept-term">
+            <p-checkbox formControlName="accept_term" [value]="true" inputId="ny"
+                [ngClass]="{ 'input-valid ng-valid': (sub || f?.accept_term?.touched) && f?.accept_term?.valid, 
+                    'input-invalid ng-invalid ng-dirty': (sub || f?.accept_term?.touched || f?.accept_term?.dirty) && f?.accept_term?.errors }"></p-checkbox>
+            <label for="ny">I do hereby declare that PAN furnished/stated above is correct and belongs to me, registered
+                as an account holder with www.exbook.com. I further declare that I shall solely be held responsible for
+                the consequences, in case of any false PAN declaration.</label>
+        </div>
+        <div class="submit-btn">
+            <button (click)="onNewPan()" class="upload">upload</button>
+        </div>
+    </form>
+
+    <div class="read-terms">
+        <a (click)="gotoRoute()">Read Terms & Conditions of PAN Card Information</a>
+    </div>
+
+</div>

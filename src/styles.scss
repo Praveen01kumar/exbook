@@ -38,6 +38,38 @@ body {
     background-color: #dcd0ff;
 }
 
+.mp-zero {
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+}
+
+.input-invalid {
+    border-color: #fc0101d1 !important;
+}
+
+.input-valid {
+    border-color: #00831fd1 !important;
+}
+
+.text-danger {
+    color: red;
+}
+
+.text-success {
+    color: green;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .exbook-layout-page,
 .collection-layout-page {
     margin-top: 80px;
@@ -49,7 +81,7 @@ body {
 
     .exbook-layout-page,
     .collection-layout-page {
-        margin-top: 180px;
+        margin-top: 192px;
     }
 
 }

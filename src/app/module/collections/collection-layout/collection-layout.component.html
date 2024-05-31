@@ -1,3 +1,18 @@
 <div class="collection-layout-page">
-    <router-outlet></router-outlet>
+    <div class="side-bar" [ngClass]="sideBar?'sidebar-hiden':'sidebar-show'">
+        <ul>
+            <li *ngFor="let item of categoryList;" [routerLink]="item?.url" routerLinkActive="active">
+                <span>{{item?.name}}</span></li>
+        </ul>
+    </div>
+    <div style="width: 100%;">
+        <div class="list-data">
+            <button class="side-toggale" (click)="sideToggel()">
+                <i class="pi" [ngClass]="sideBar?'pi-angle-left':'pi-angle-right'"></i>
+            </button>
+            <div class="product-list">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
 </div>

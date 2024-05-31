@@ -7,18 +7,16 @@ import { pageRoute } from './shared/constant/route.const';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { SellerRegisterComponent } from './pages/seller-register/seller-register.component';
-import { DetailpageComponent } from './pages/detailpage/detailpage.component';
+import { DetailpageComponent } from './pages/detail-page/detail-page.component';
 import { CartListingComponent } from './pages/cart-listing/cart-listing.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { TermsofUseComponent } from './pages/termsof-use/termsof-use.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { GiftCardsComponent } from './pages/gift-cards/gift-cards.component';
-import { RewardsComponent } from './pages/rewards/rewards.component';
-import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { SupportsComponent } from './pages/supports/supports.component';
 import { AdvertiseComponent } from './pages/advertise/advertise.component';
+import { CollectionComponent } from './module/collections/collection/collection.component';
 
 const routes: Routes = [
   { path: pageRoute?.empty, component: HomeComponent },
@@ -34,11 +32,10 @@ const routes: Routes = [
   { path: pageRoute?.wishlist, component: WishlistComponent },
   { path: pageRoute?.termsofuse, component: TermsofUseComponent },
   { path: pageRoute?.privacypolicy, component: PrivacyPolicyComponent },
-  { path: pageRoute?.giftcards, component: GiftCardsComponent },
-  { path: pageRoute?.rewards, component: RewardsComponent },
-  { path: pageRoute?.myprofile, component: MyProfileComponent },
+  { path: pageRoute?.myprofile, loadChildren: () => import('../app/module/profile/profile.module').then(m => m.ProfileModule) },
   { path: pageRoute?.supports, component: SupportsComponent },
   { path: pageRoute?.advertise, component: AdvertiseComponent },
+  { path: pageRoute?.collection, component: CollectionComponent },
   { path: pageRoute?.veiled, component: NotfoundComponent }
 ];
 

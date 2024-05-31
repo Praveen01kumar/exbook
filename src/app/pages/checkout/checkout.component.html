@@ -4,7 +4,7 @@
         <div class="deliver-to" *ngIf="islogedIn">
             <div class="address-label">
                 <div class="label">Login: <i class="pi pi-check" style="color: green"></i></div>
-                <div class="address">Praveen Kumar +919128342132</div>
+                <div class="address">Abhishek Gupta +919128342132</div>
             </div>
             <div class="change-btn">
                 <button>Change</button>
@@ -19,9 +19,9 @@
                                 aria-describedby="username-help" />
                             <small id="username-help">
                                 By continuing, you agree to Exbook's
-                                <a (click)="gotoRoute(pageRoute?.termsofuse)">Terms of Use</a>
+                                <a (click)="gotoRoute(pageRoute?.termsofuse, 'term_policy')">Terms of Use</a>
                                 and
-                                <a (click)="gotoRoute(pageRoute?.privacypolicy)">Privacy Policy</a>
+                                <a (click)="gotoRoute(pageRoute?.privacypolicy, 'term_policy')">Privacy Policy</a>
                             </small>
                         </div>
                         <div class="advantages">

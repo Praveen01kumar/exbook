@@ -1,4 +1,56 @@
 <div class="user-register-page">
-    <p>user-register works!</p>
+    <div class="detail-register">
+        <div class="detail">
+            <div class="heading">
+                <h1>Looks like you're new here!</h1>
+                <h2>Sign up with your mobile number to get started</h2>
+            </div>
+            <div class="image">
+                <img src="assets/auth/register.png" alt="register">
+            </div>
+        </div>
+        <div class="register">
+            <div class="form-field">
+                <form class="register-form" [formGroup]="RegisterForm" (ngSubmit)="onRegister()">
+                    <div class="phone_number">
+                        <input type="text" placeholder="Enter Phone Number" formControlName="phone_number"
+                            [ngClass]="{ 'input-valid': (sub || f?.phone_number?.touched) && f?.phone_number?.valid, 
+                    'input-invalid': (sub || f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors }" autocomplete="off">
+                        <span
+                            *ngIf="(sub && f?.phone_number?.errors) || ((f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors)"
+                            class="text-danger">
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.required">Phone number is required!</p>
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.minlength">Minimum 10 digits are
+                                required!</p>
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.maxlength">Maximum 12 digits are allowed!
+                            </p>
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.speChar">Special characters are not
+                                allowed!</p>
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.space">Space are not allowed!</p>
+                            <p class="mp-zero" *ngIf="f?.phone_number?.errors?.notNum">Only numbers are allowed!</p>
+                        </span>
+                        <span
+                            *ngIf="(sub && f?.phone_number?.errors===null) || ((f?.phone_number?.touched || f?.phone_number?.dirty) && f?.phone_number?.errors===null)"
+                            class="text-success">
+                            <p class="mp-zero">Good to go!</p>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="continuing">
+                <span>
+                    By continuing, you agree to Exbook's
+                    <a (click)="gotoRoute(pageRoute?.termsofuse, 'term_policy')">Terms of Use</a>
+                    and
+                    <a (click)="gotoRoute(pageRoute?.privacypolicy, 'term_policy')">Privacy Policy</a>
+                </span>
+            </div>
+            <div class="continue-btn">
+                <button>CONTINUE</button>
+            </div>
+            <div class="existing-user-btn">
+                <button (click)="gotoRoute(pageRoute?.login, 'account')">Existing User? Log in</button>
+            </div>
+        </div>
+    </div>
 </div>
-

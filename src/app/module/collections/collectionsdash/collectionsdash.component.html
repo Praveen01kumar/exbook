@@ -1,3 +1,10 @@
 <div class="categoriesdash-page">
-    <p>categoriesdash works!</p>
+    <div class="category-list">
+        <div class="category-list-item" *ngFor="let item of categoryList" (click)="gotoCategory(item?.url)">
+            <div class="image">
+                <img [src]="item?.image" [alt]="item?.name">
+            </div>
+            <div class="name"><span>{{item?.name}}</span></div>
+        </div>
+    </div>
 </div>

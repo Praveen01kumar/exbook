@@ -28,7 +28,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { RatingModule } from 'primeng/rating';
 import { LimitedOfferComponent } from './components/limited-offer/limited-offer.component';
 import { StacksComponent } from './components/stacks/stacks.component';
-import { DetailpageComponent } from '../pages/detailpage/detailpage.component';
+import { DetailpageComponent } from '../pages/detail-page/detail-page.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TabViewModule } from 'primeng/tabview';
@@ -45,11 +45,9 @@ import { OrdersComponent } from '../pages/orders/orders.component';
 import { WishlistComponent } from '../pages/wishlist/wishlist.component';
 import { TermsofUseComponent } from '../pages/termsof-use/termsof-use.component';
 import { PrivacyPolicyComponent } from '../pages/privacy-policy/privacy-policy.component';
-import { GiftCardsComponent } from '../pages/gift-cards/gift-cards.component';
-import { RewardsComponent } from '../pages/rewards/rewards.component';
-import { MyProfileComponent } from '../pages/my-profile/my-profile.component';
 import { SupportsComponent } from '../pages/supports/supports.component';
 import { AdvertiseComponent } from '../pages/advertise/advertise.component';
+import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
 
@@ -81,9 +79,6 @@ import { AdvertiseComponent } from '../pages/advertise/advertise.component';
     WishlistComponent,
     TermsofUseComponent,
     PrivacyPolicyComponent,
-    GiftCardsComponent,
-    RewardsComponent,
-    MyProfileComponent,
     SupportsComponent,
     AdvertiseComponent,
   ],
@@ -108,6 +103,7 @@ import { AdvertiseComponent } from '../pages/advertise/advertise.component';
     ChipModule,
     ToastModule,
     RadioButtonModule,
+    InputMaskModule
     
   ],
   exports: [
